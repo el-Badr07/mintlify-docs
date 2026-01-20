@@ -93,16 +93,7 @@
             "group": "Policies & Rules",
             "pages": [
               "admin/sla-policies",
-              "admin/escalation-rules",
-              "admin/automation-workflows"
-            ]
-          },
-          {
-            "group": "AI Configuration",
-            "pages": [
-              "admin/ai-system-setup",
-              "admin/agent-management",
-              "admin/knowledge-base-admin"
+              "admin/escalation-rules"
             ]
           }
         ]
@@ -122,13 +113,7 @@
       }
     ],
     "global": {
-      "anchors": [
-        {
-          "anchor": "Support",
-          "href": "mailto:support@intelligate.com",
-          "icon": "envelope"
-        }
-      ]
+      "anchors": []
     }
   },
   "logo": {
@@ -136,12 +121,7 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@intelligate.com"
-      }
-    ],
+    "links": [],
     "primary": {
       "type": "button",
       "label": "Back to Platform",
