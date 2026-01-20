@@ -3,475 +3,529 @@ title: "Dashboard Overview"
 description: "Monitor KPIs, performance metrics, and team workload"
 ---
 
-## Dashboard Overview
+## What is the Dashboard?
 
-The Intelligate dashboard provides real-time visibility into your operations. Whether you're an executive needing strategic insights or a manager monitoring team performance, the dashboard adapts to your role.
+The Dashboard is your central command center for monitoring claims, team performance, and operational health. It provides real-time insights into what's happening across your organization.
 
----
-
-## Key Performance Indicators (KPIs)
-
-### 1. Total Claims
-
-**Shows**: All claims in current period
-
-- **Organization View** (Admin): All organization claims
-- **Department View** (Manager): Department claims only
-- **Personal View** (Employee): Claims you created
-
-**Interpretation:**
-- Increasing trend: Growing issue volume (hiring needed?)
-- Decreasing trend: Process improvements working
-- Seasonal patterns: Plan resource allocation
-- Compare to previous period: Track growth/decline
-
-**Actions:**
-- Click to see claim list with filters
-- Break down by department or category
-- Analyze by priority level
-
-### 2. Average Resolution Time
-
-**Shows**: How long claims typically take from OPEN to CLOSED (in hours)
-
-**Formula**: Sum of all resolution times / Number of closed claims
-
-**Example metrics:**
-- 12 hours: Excellent - very responsive
-- 24-48 hours: Good - reasonable turnaround
-- 72+ hours: Investigate - may need process review
-
-**What affects resolution time:**
-- Claim complexity
-- Team availability
-- SLA policies
-- Escalation frequency
-
-**Actions:**
-- Click to drill down by category
-- See which categories take longest
-- Identify bottlenecks
-- Compare teams
-
-### 3. SLA Compliance Rate
-
-**Shows**: % of claims resolved on time
-
-**Formula**: On-time claims / Total claims x 100
-
-**Example:**
-- 95% compliance: Excellent
-- 85% compliance: Good
-- 75% compliance: Needs improvement
-- <75%: Critical issue
-
-**Trends to watch:**
-- Declining compliance: Need more resources
-- Specific category declining: Process issue
-- Specific team declining: Training needed
-
-**Actions:**
-- Click to see which claims missed SLA
-- Filter by category or department
-- Identify common issues
-
-### 4. Priority Distribution
-
-**Shows**: Breakdown of claims by priority level
-
-**Visualization**: Pie chart or bar chart
-- Critical: % (should be small, <5%)
-- High: % (typically 15-30%)
-- Medium: % (typically 40-50%)
-- Low: % (typically 20-30%)
-
-**Healthy distribution:**
-- Most claims Medium or Low
-- Few Critical claims
-- High priorities balanced
-
-**Warning signs:**
-- Too many Critical claims: Classification may be wrong
-- Too many Low claims: May be missing urgent issues
-- All High/Critical: Potential process chaos
-
-**Actions:**
-- Review how priorities assigned
-- Check AI classification accuracy
-- Retrain if pattern incorrect
-
-### 5. Category Breakdown
-
-**Shows**: Claims by type (Quality, Safety, Logistics, Maintenance)
-
-**Example distribution:**
-- Quality: 40%
-- Maintenance: 25%
-- Logistics: 20%
-- Safety: 10%
-- Other: 5%
-
-**Interpretation:**
-- Reflects operational reality of your facility
-- Quality-heavy: Focus on manufacturing processes
-- Maintenance-heavy: Equipment aging?
-- Safety-focused: Good - safety priority
-
-**Trends to watch:**
-- Sudden increase in category: Root cause?
-- Seasonal patterns: Weather, staffing, etc.
-- New equipment = new category spike
-
-**Actions:**
-- Click category to drill down
-- See all claims in category
-- Analyze trends over time
-
-### 6. Department Performance
-
-**Shows**: How each department is performing
-
-**Metrics per department:**
-- Total claims in department
-- Average resolution time
-- SLA compliance %
-- Workload (claims per person)
-- Trending
-
-**Interpretation:**
-- Consistent high SLA: Well-managed team
-- Declining SLA: Needs support
-- High workload + low SLA: Hiring needed
-- Low activity: Team tracking properly?
-
-**Actions:**
-- Click department to see details
-- Compare departments against each other
-- Identify star performers
-- Support struggling teams
+**Access**: Available immediately upon login for all roles (customized by permission level)
 
 ---
 
-## Team Workload Overview
+## Dashboard Components
+
+### Key Performance Indicators (KPIs)
+
+**Top-level metrics displayed prominently:**
+
+**Total Claims**
+- Count of all active claims in system
+- Trend indicator (up/down from last period)
+- Quick filter to view list
+
+**Open Claims**
+- Claims awaiting assignment or action
+- Red alert if count is high
+- Click to see list
+
+**In Progress Claims**
+- Claims actively being worked
+- Shows team engagement
+- Filter by department or person
+
+**Resolved Claims**
+- Claims awaiting verification/closure
+- Manager action needed
+- Review queue
+
+**SLA Compliance Rate**
+- Percentage of claims meeting deadline
+- Green (>90%), Yellow (75-90%), Red (<75%)
+- Organization-wide metric
+
+**Average Resolution Time**
+- Mean time from creation to closure
+- Trending up or down
+- Compare to industry benchmarks
+
+**Critical Claims**
+- Count of high-urgency issues
+- Always displayed prominently
+- Requires immediate attention
+
+**Overdue Claims**
+- Claims past SLA deadline
+- Red alert indicator
+- Escalation recommended
+
+---
+
+## Team Workload View
 
 ### Workload by Department
 
-**Shows**: How work is distributed across departments
+**Visual breakdown showing:**
+- Production: 12 claims (4 critical, 8 high)
+- Quality: 8 claims (1 critical, 3 high, 4 medium)
+- Maintenance: 15 claims (2 critical, 8 high, 5 medium)
+- Logistics: 5 claims (0 critical, 2 high, 3 medium)
+- Safety: 2 claims (2 critical)
 
-**Visualization**:
-- Bar chart showing claims per department
-- Stacked by status (Open, In Progress, Resolved, Closed)
-- Per-person averages
+**Insights:**
+- Which departments are busiest
+- Where resources are needed
+- Bottleneck identification
+- Capacity planning
 
-**Reading the chart:**
-- OPEN column height: New work waiting
-- IN_PROGRESS column: Active work
-- Large OPEN stack: Bottleneck
-- Small IN_PROGRESS: Maybe not working?
+### Individual Workload
 
-**Example:**
-```
-Quality     ???????? (40 claims) - 5 people = 8 each (good)
-Maintenance ??????? (35 claims) - 3 people = 12 each (heavy)
-Logistics   ???? (20 claims)    - 4 people = 5 each (light)
-```
+**Team member assignment view:**
 
-### Workload by Individual
+| Team Member | Total Claims | Critical | High | Medium | Low | SLA Status |
+|-------------|--------------|----------|------|--------|-----|------------|
+| John Smith | 7 | 2 | 3 | 2 | 0 | 85% on-time |
+| Sarah Lee | 4 | 0 | 2 | 2 | 0 | 100% on-time |
+| David Chen | 9 | 1 | 5 | 3 | 0 | 78% on-time |
+| Maria Garcia | 3 | 0 | 1 | 2 | 0 | 100% on-time |
 
-**Shows**: Claims assigned to each person
-
-**View:**
-- List of team members
-- Number of claims assigned
-- Status breakdown per person
-- Average resolution time per person
-
-**Interpretation:**
-- Balanced workload: 5-10 claims per person typically
-- Over-assigned: >15 claims needs help
-- Under-assigned: <3 claims check if untracked
-
-**Actions:**
-- Rebalance workload
-- Identify top performers
-- Support struggling team members
-- Plan vacation coverage
-
-### Capacity Planning
-
-**Ask yourself:**
-- Do we have enough people?
-- Is workload distributed fairly?
-- Who needs training?
-- Who needs backup?
-- When do we need to hire?
-
-**Use dashboard data:**
-1. Calculate average claims per person
-2. See peak load times
-3. Identify seasonal patterns
-4. Plan hiring ahead of busy season
+**Use this to:**
+- Balance workload (David has 9, Maria has 3)
+- Identify who needs help
+- Recognize top performers
+- Reassign claims if needed
+- Track individual SLA performance
 
 ---
 
-## Time-Series Analysis
+## Priority Distribution
 
-### Claims Volume Trend
+### Visual Priority Breakdown
 
-**Shows**: How many claims over time
+**Chart showing claim distribution:**
+- Critical: 15% (RED indicator)
+- High: 35% (ORANGE indicator)
+- Medium: 40% (YELLOW indicator)
+- Low: 10% (GREEN indicator)
 
-**Time periods:**
-- Daily: Last 30 days
-- Weekly: Last 12 weeks
-- Monthly: Last 12 months
+**Healthy distribution:**
+- Critical should be <20%
+- Most claims Medium/Low
+- High percentage of Critical = process issue
 
-**What to look for:**
-- Upward trend: Growing issues or more reporting?
-- Downward trend: Improvements working?
-- Spikes: Something specific happened?
-- Flat line: Stable operations
-
-**Example:**
-```
-Claims/week
-  40 |     /\
-  30 |    /  \    /\
-  20 |   /    \  /  \     New process
-  10 |  /      \/    \   implemented
-   0 +---------------------
-     Jan Feb Mar Apr May
-```
-
-### Resolution Time Trend
-
-**Shows**: Is resolution getting faster or slower?
-
-**Tracking:**
-- Improving: Process getting better
-- Declining: Maybe new staff less experienced?
-- Stable: Consistent performance
-
-**Cause investigation:**
-- Staffing changes: New people slower initially
-- Process changes: May help or hurt
-- Equipment changes: Might affect repair time
-- Seasonal: Holidays, weather impact
-
-### SLA Compliance Trend
-
-**Shows**: Meeting deadlines consistently?
-
-**Healthy trend:**
-- 90%+ consistently
-- Small variations (85-95%)
-- Upward movement: Good
-
-**Concerning trend:**
-- Below 80%
-- Declining month over month
-- Specific category dropping
-- Specific team struggling
-
-**Actions when SLA drops:**
-1. What changed? (Staffing, process, volume)
-2. Which claims are missing? (Category, department)
-3. Can we fix quickly? (Add resources, simplify process)
-4. Is it temporary or pattern? (Plan response accordingly)
-
-### Category Trends
-
-**Shows**: Are certain claim types increasing or decreasing?
-
-**Questions to ask:**
-- Quality increasing: Is manufacturing slipping?
-- Safety increasing: Are hazards being discovered?
-- Maintenance increasing: Equipment aging?
-- Logistics increasing: Supply chain issues?
-
-**Taking action:**
-- Investigate root causes
-- Make process changes
-- Address systemic issues
-- Celebrate improvements
+**If seeing too many Critical:**
+- Review AI classification settings
+- Check if users manually overriding
+- May indicate operational problems
+- Consider process improvements
 
 ---
 
-## Advanced Analytics
+## Category Analysis
 
-### Root Cause Analysis
+### Claims by Category
 
-**Shows**: What causes most claims?
+**Breakdown by type:**
+- Quality: 45% (largest category)
+- Maintenance: 30%
+- Logistics: 15%
+- Safety: 5%
+- Other: 5%
 
-**Example breakdown:**
-- Training gaps: 35% of safety claims
-- Equipment age: 40% of maintenance claims
-- Supplier quality: 25% of logistics claims
-- Process errors: 30% of quality claims
+**Trending analysis:**
+- Quality claims down 12% this month (good trend)
+- Maintenance claims up 8% (aging equipment?)
+- Safety stable
+- Logistics improving
 
-**Strategic use:**
-- Address top causes first (highest ROI)
-- Target training on gap areas
-- Plan equipment replacement
-- Improve supplier relationships
+**Use insights to:**
+- Identify recurring problems
+- Allocate resources
+- Plan preventive maintenance
+- Improve processes
 
-### Repeat Issue Identification
+---
 
-**Shows**: Claims that repeat frequently
+## SLA Performance Tracking
 
-**Example:**
-- "Conveyor belt tension" - 5 times in 6 months
-- "Sensor calibration" - 3 times in 3 months
-- "Supplier delivery delay" - 7 times in year
+### SLA Status Overview
 
-**Actions:**
-- Implement permanent fix (not temporary)
-- Update maintenance schedule
-- Change supplier
-- Update procedures
+**Real-time compliance monitoring:**
 
-### Department Efficiency
+**On-Time Claims** (GREEN)
+- 42 claims on track
+- Meeting deadlines
+- No immediate action needed
 
-**Shows**: How efficiently each department works
+**At-Risk Claims** (YELLOW)
+- 8 claims approaching deadline
+- Action recommended soon
+- Review and prioritize
 
-**Metrics:**
-- Claims per person
+**Overdue Claims** (RED)
+- 3 claims past deadline
+- Immediate escalation required
+- Manager intervention needed
+
+**Overall SLA Compliance: 88%**
+- Target: 90%
+- Trend: Improving (+3% from last month)
+- Action: Focus on at-risk claims
+
+### Department SLA Performance
+
+| Department | Total Claims | On-Time | At-Risk | Overdue | Compliance % |
+|------------|--------------|---------|---------|---------|--------------|
+| Quality | 25 | 22 | 2 | 1 | 88% |
+| Maintenance | 18 | 15 | 2 | 1 | 83% |
+| Logistics | 8 | 7 | 1 | 0 | 88% |
+| Safety | 2 | 2 | 0 | 0 | 100% |
+
+**Insights:**
+- Safety performing excellently
+- Maintenance needs attention (83%)
+- Quality and Logistics similar performance
+- Focus improvement efforts on Maintenance
+
+---
+
+## Trend Analysis
+
+### Time-Series Charts
+
+**Claims Created Over Time**
+- Line chart showing daily/weekly claim volume
+- Identify spikes and patterns
+- Seasonal trends
+- Plan staffing accordingly
+
+**Resolution Time Trends**
+- Are we getting faster or slower?
+- Month-over-month comparison
+- Goal: Decreasing trend
+
+**SLA Compliance Trends**
+- Historical compliance rates
+- Identify improvement or decline
+- Correlate with events (new staff, process changes)
+
+**Category Trends**
+- Which problem types increasing?
+- Which decreasing?
+- Focus improvement where needed
+
+---
+
+## Filters and Customization
+
+### Dashboard Filters
+
+**Filter by:**
+- **Date Range**: Today, This Week, This Month, Custom
+- **Department**: All, Production, Quality, Maintenance, etc.
+- **Priority**: All, Critical, High, Medium, Low
+- **Status**: All, Open, In Progress, Resolved, Closed
+- **Assigned To**: All, Me, Specific Person, Unassigned
+- **Category**: All, Quality, Safety, Logistics, Maintenance
+- **SLA Status**: All, On-Time, At-Risk, Overdue
+
+**Save filter presets:**
+- "My Critical Claims"
+- "Department Overview"
+- "SLA At-Risk"
+- "This Week's Activity"
+
+### Role-Based Views
+
+**Employee View:**
+- My assigned claims
+- My department claims
+- Claims I created
+- Simplified metrics
+
+**Manager View:**
+- Full department overview
+- Team workload distribution
+- SLA performance
+- Escalation queue
+- Resource allocation
+
+**Admin View:**
+- Organization-wide metrics
+- All departments
+- System health
+- Configuration access
+- User management
+
+---
+
+## Quick Actions
+
+### Dashboard Shortcuts
+
+**From dashboard, you can:**
+
+**Create New Claim**
+- One-click claim creation
+- Text, Voice, or Image
+- Fastest way to report
+
+**Bulk Actions**
+- Select multiple claims
+- Assign to same person
+- Change priority
+- Add to watchlist
+
+**Export Data**
+- Download current view as CSV
+- Generate PDF report
+- Schedule automated reports
+- Share with stakeholders
+
+**Escalate Claim**
+- Quick escalation for at-risk/overdue
+- Notify manager immediately
+- Track escalation history
+
+---
+
+## Real-Time Updates
+
+### Live Dashboard
+
+**Auto-refresh:**
+- Dashboard updates every 30 seconds
+- No need to manually refresh
+- See changes immediately
+- Real-time collaboration
+
+**Notification badges:**
+- New claim indicator
+- Assignment notifications
+- Comment alerts
+- SLA warnings
+
+**Activity feed:**
+- Recent claim updates
+- Team activity
+- System events
+- Audit trail
+
+---
+
+## Dashboard Widgets
+
+### Customizable Layout
+
+**Drag-and-drop widgets:**
+- Arrange dashboard your way
+- Show/hide widgets
+- Resize components
+- Save personal layout
+
+**Available widgets:**
+- KPI Summary Cards
+- Team Workload Chart
+- SLA Compliance Gauge
+- Priority Distribution Pie Chart
+- Recent Activity Feed
+- At-Risk Claims List
+- My Assigned Claims
+- Department Performance
+- Trend Charts
+
+---
+
+## Performance Metrics
+
+### Individual Performance
+
+**For each team member, track:**
+- Claims assigned
+- Claims resolved
 - Average resolution time
-- SLA compliance
-- First-time fix rate (solves without escalation)
+- SLA compliance rate
+- Customer satisfaction
+- Collaboration activity
 
-**Benchmarking:**
-- Compare departments to each other
-- Compare to industry standards
-- Track improvements over time
+**Use for:**
+- Performance reviews
+- Recognition and rewards
+- Identifying training needs
+- Workload balancing
+
+### Team Performance
+
+**Department-level metrics:**
+- Total claims handled
+- Resolution speed
+- SLA compliance
+- Recurring issues
+- Collaboration effectiveness
+
+**Compare departments:**
+- Benchmark performance
+- Share best practices
+- Identify process gaps
+- Resource allocation
 
 ---
 
-## Custom Reporting
+## Alert Configuration
 
-### Pre-Built Reports
+### Custom Alerts
+
+**Set up alerts for:**
+- New critical claim created
+- Claim assigned to me
+- SLA approaching deadline (2 hours before)
+- Claim overdue
+- Comment mentions me
+- Status changed on my claim
+
+**Alert channels:**
+- In-app notification (bell icon)
+- Email notification
+- SMS (if configured)
+- Dashboard banner
+
+**Alert frequency:**
+- Immediate
+- Hourly digest
+- Daily summary
+- Custom schedule
+
+---
+
+## Reports and Analytics
+
+### Built-in Reports
 
 **Available reports:**
-- **Department Performance**: Deep dive into one team
-- **Category Analysis**: Focus on specific claim type
-- **SLA Compliance**: Deadline adherence details
-- **Team Workload**: Individual productivity
-- **Trend Analysis**: Historical patterns
 
-### Creating Custom Views
+**Daily Summary**
+- Claims created today
+- Claims resolved today
+- Current backlog
+- SLA compliance
+- Team activity
 
-**Dashboard customization:**
-1. Select time period
-2. Choose departments or individuals
-3. Select metrics to display
-4. Set comparison baseline
-5. Save for future use
+**Weekly Performance**
+- Week-over-week trends
+- Team performance
+- Category breakdown
+- Resolution metrics
 
-### Exporting Data
+**Monthly Review**
+- Month-end KPIs
+- Department comparison
+- Improvement areas
+- Executive summary
 
-**Export to:**
-- **CSV**: For spreadsheet analysis in Excel
-- **PDF**: For reports and presentations
-- **Email**: Schedule regular reports
+**Custom Reports**
+- Build your own
+- Select metrics
+- Choose date range
+- Schedule delivery
 
-**Use cases:**
-- Executive presentations
-- Board reporting
-- Trend analysis
-- Compliance documentation
-- Process improvement meetings
+### Export Options
 
----
+**Download formats:**
+- CSV (Excel compatible)
+- PDF (formatted report)
+- JSON (API integration)
+- Print-friendly view
 
-## Role-Specific Dashboard Views
-
-### Employee Dashboard
-
-**What employees see:**
-- My claims: Created and assigned to me
-- Recent activity: Updates on my claims
-- My SLA: Status of my assigned work
-- Quick stats: How I'm performing
-
-### Manager Dashboard
-
-**What managers see:**
-- Department overview: All department claims
-- Team workload: Claims per person
-- At-risk claims: Flagged for action
-- SLA compliance: Team metrics
-- Trend analysis: Department trends
-
-### Admin Dashboard
-
-**What admins see:**
-- Organization-wide metrics
-- All departments compared
-- System health indicators
-- Configuration status
-- Audit activity
+**Scheduled exports:**
+- Daily at 8 AM
+- Weekly on Monday
+- Monthly on 1st
+- Custom schedule
 
 ---
 
-## Tips for Effective Dashboard Use
+## Dashboard Best Practices
 
-### Daily Monitoring
-- ? Check dashboard first thing in morning
-- ? Identify at-risk claims needing attention
-- ? Address new urgent claims
-- ? Review team's workload balance
+### Daily Routine
 
-### Weekly Reviews
-- ? Review SLA compliance rate
-- ? Check if trends changing
-- ? Identify patterns needing action
-- ? Plan next week's priorities
+**Start of day (5 minutes):**
+1. Check dashboard for new critical claims
+2. Review at-risk claims
+3. Check team workload
+4. Prioritize your work
+
+**During day (ongoing):**
+- Monitor real-time updates
+- Respond to notifications
+- Update claim status
+- Communicate with team
+
+**End of day (5 minutes):**
+- Review progress on assigned claims
+- Update status before leaving
+- Check tomorrow's priorities
+- Note blockers for follow-up
+
+### Weekly Review
+
+**Manager weekly check (15 minutes):**
+1. Review SLA compliance trends
+2. Identify workload imbalances
+3. Recognize top performers
+4. Address recurring issues
+5. Plan resource allocation
 
 ### Monthly Analysis
-- ? Deep dive on metrics
-- ? Compare month to previous month
-- ? Identify systemic issues
-- ? Plan improvements for next month
 
-### Quarterly Strategic Review
-- ? Export full quarter report
-- ? Analyze major trends
-- ? Plan hiring or resources
-- ? Update processes based on data
+**Admin monthly review (30 minutes):**
+1. Analyze category trends
+2. Review department performance
+3. Identify process improvements
+4. Update SLA policies if needed
+5. Generate executive report
 
 ---
 
-## Troubleshooting Dashboard
+## Dashboard Tips
 
-### Metrics Seem Wrong
+### Maximizing Dashboard Value
 
-**Check these things:**
-- Date range correct? (Make sure you're looking at right period)
-- Filters applied? (Might be filtering out data)
-- Timezone correct? (Timestamps in right zone)
-- Claims marked properly? (Status and category correct)
+**Do:**
+- Check dashboard daily
+- Use filters to focus
+- Set up relevant alerts
+- Export data for meetings
+- Share insights with team
+- Act on at-risk claims immediately
 
-### Missing Data
+**Don't:**
+- Ignore overdue claims
+- Let at-risk become overdue
+- Micromanage based on metrics
+- Skip weekly reviews
+- Hide bad metrics
+- Delay taking action
 
-**Reasons:**
-- Claims haven't been created yet (new organization)
-- Time range too narrow (no data in that period)
-- User permission limited (can't see some claims)
-- Filters too restrictive
+### Common Insights
 
-### Performance Slow
+**High volume of claims:**
+- May need additional staff
+- Check for systemic issues
+- Review process efficiency
 
-**Try:**
-- Reduce time range (daily instead of yearly)
-- Filter to specific department
-- Close other browser tabs
-- Refresh page
-- Contact support if continues
+**Low SLA compliance:**
+- Unrealistic SLA settings?
+- Resource constraints?
+- Training needed?
+
+**Unbalanced workload:**
+- Reassign claims
+- Hire additional staff
+- Review auto-assignment rules
 
 ---
 
 ## Next Steps
 
+- [Advanced Analytics](/platform/advanced-analytics) - Deep-dive analysis
 - [Reports](/platform/reports) - Generate detailed reports
-- [Advanced Analytics](/platform/advanced-analytics) - Deep dive analysis
-- [Business Rules](/platform/business-rules-automation) - Automate improvements
-- [Admin Console](/admin/initial-setup) - System configuration
+- [Business Rules](/platform/business-rules-automation) - Automate workflows
+- [SLA Policies](/admin/sla-policies) - Configure deadlines
