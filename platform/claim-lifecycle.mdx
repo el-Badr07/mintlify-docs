@@ -18,7 +18,7 @@ This guide covers the entire lifecycle of a claim from creation through resoluti
 **Step-by-step:**
 1. **Click "New Claim"** -> Select **"Text"**
 2. **Enter claim details**:
-   - **Title**: Brief summary (e.g., "Assembly line conveyor misalignment")
+   - **Title**: Brief summary (e.g., "Assembly conveyor misalignment")
    - **Description**: Detailed explanation with context
    - **Category**: Quality, Safety, Logistics, Maintenance, or custom
    - **Department**: Which department should handle this
@@ -26,7 +26,7 @@ This guide covers the entire lifecycle of a claim from creation through resoluti
 3. **Submit**
 
 **What happens automatically:**
-- Intelligate analyzes text and predicts category (AI may override your selection)
+- Reclamia analyzes text and predicts category (AI may override your selection)
 - Priority assigned (Low, Medium, High, Critical)
 - Sent to appropriate department
 - You see the claim on dashboard immediately
@@ -66,7 +66,7 @@ This guide covers the entire lifecycle of a claim from creation through resoluti
 
 **Tips for better voice capture:**
 - Speak clearly without rush
-- Use production floor language (team will understand)
+- Use work site language (team will understand)
 - Include "where" information
 - Mention time sensitivity
 - Note if immediate action needed
@@ -122,7 +122,7 @@ This guide covers the entire lifecycle of a claim from creation through resoluti
 
 ### AI Auto-Classification
 
-After submitting any claim type, Intelligate automatically processes it:
+After submitting any claim type, Reclamia automatically processes it:
 
 **Classification includes:**
 - **Category**: Quality, Safety, Logistics, Maintenance, Other
@@ -134,7 +134,7 @@ After submitting any claim type, Intelligate automatically processes it:
 **How to use classification:**
 - **Review the AI suggestions** on claim detail page
 - **Override if wrong**: Click to change category or priority
-- **Note confidence**: Low confidence (<70%) may need review
+- **Note confidence**: Low confidence (below 70%) may need review
 - **Your correction trains AI**: Each override improves future predictions
 - **Track patterns**: High override rate on a category suggests misconfiguration
 
@@ -145,7 +145,7 @@ After submitting any claim type, Intelligate automatically processes it:
 1. **Start with voice** while on line: "Saw unusual noise from hydraulic pump, coming from Port side"
 2. **Add image** of the pump location
 3. **Add text** with additional context: "Noise started 2 hours ago, hydraulic pressure reading: 340 bar (normal 300-320)"
-4. **Intelligate processes all input**:
+4. **Reclamia processes all input**:
    - Transcribes voice (gets location and symptom)
    - Analyzes image (confirms location)
    - Reads text details (provides diagnostic info)
@@ -446,7 +446,7 @@ Status updated, on track now
 - 95%+ compliance: Excellent process
 - 85-95% compliance: Good, monitor trends
 - 75-85% compliance: Needs improvement
-- <75% compliance: Critical issues, investigate
+- Below 75% compliance: Critical issues, investigate
 
 ---
 
@@ -565,13 +565,13 @@ Next day 09:00 AM - Status: RESOLVED -> CLOSED
 
 ### Real Manufacturing Scenario
 
-**The situation**: Equipment breakdown on production line
+**The situation**: Equipment breakdown on operations
 
 **10:15 AM - Employee Reports**
-- Employee on floor notices conveyor belt slowing down
+- Employee on floor notices equipment slowing down
 - Uses phone to create **voice claim**: "Conveyor belt slowing down, production impact, need urgent fix"
 - Groq transcribes voice
-- Intelligate classifies: "Maintenance" category, "Critical" priority
+- Reclamia classifies: "Maintenance" category, "Critical" priority
 - Claim created #42857
 
 **10:17 AM - Manager Notified**
@@ -583,7 +583,7 @@ Next day 09:00 AM - Status: RESOLVED -> CLOSED
 
 **10:20 AM - Maintenance Tech Starts**
 - David gets notification of assignment
-- Opens Intelligate on maintenance tablet
+- Opens Reclamia on maintenance tablet
 - Reads comment from manager
 - Changes status: OPEN -> IN_PROGRESS
 - Walks to conveyor and starts diagnosis

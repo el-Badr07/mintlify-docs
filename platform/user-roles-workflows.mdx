@@ -5,7 +5,7 @@ description: "Understand role-specific workflows and permissions"
 
 ## Role Overview
 
-Intelligate supports three primary roles, each with specific responsibilities and capabilities. Roles are defined in Keycloak and automatically synchronized to Intelligate.
+Reclamia supports three primary roles, each with specific responsibilities and capabilities. Roles are defined in Keycloak and automatically synchronized to Reclamia.
 
 | Aspect | Admin | Manager | Employee |
 |--------|-------|---------|----------|
@@ -33,7 +33,7 @@ Employees see:
 
 **Scenario**: Assembly line worker finds a defect
 
-1. **Employee opens Intelligate** on production floor tablet
+1. **Employee opens Reclamia** on production floor tablet
 2. **Clicks "New Claim"** → selects "Voice"
 3. **Records issue**: "Found misalignment in component batch 12345"
 4. **Hangs up phone** and Groq Whisper transcribes automatically
@@ -258,7 +258,7 @@ Admins see:
 
 ### Typical Workflow: Review Organization Health
 
-**Scenario**: Quarterly review of Intelligate usage
+**Scenario**: Quarterly review of Reclamia usage
 
 1. **Exports organization report** (PDF)
 2. **Reviews metrics**:
@@ -330,8 +330,8 @@ Admins see:
 2. **Assigned to Users**: When creating/modifying users in Keycloak, admin assigns one or more roles
 3. **Synced on Login**: When user logs in, Keycloak passes roles in JWT token
 4. **Kong Validates**: Kong Gateway validates JWT and passes roles to backend
-5. **Intelligate Receives**: Backend reads roles from Kong headers and syncs to user record
-6. **Interface Adapts**: Intelligate shows role-appropriate interface
+5. **Reclamia Receives**: Backend reads roles from Kong headers and syncs to user record
+6. **Interface Adapts**: Reclamia shows role-appropriate interface
 
 ### Changing Roles
 
@@ -342,9 +342,9 @@ Admins see:
    - Add "manager" role
 2. **User logs out** or sessions expires
 3. **User logs back in**
-4. **New role** automatically reflected in Intelligate
+4. **New role** automatically reflected in Reclamia
 5. **Interface updates** to show manager capabilities
-6. **Changed immediately** - no Intelligate admin action needed
+6. **Changed immediately** - no Reclamia admin action needed
 
 ---
 
