@@ -16,7 +16,7 @@ This guide covers the entire lifecycle of a claim from creation through resoluti
 **Best for**: Detailed descriptions, desk-based reporting, complex situations
 
 **Step-by-step:**
-1. **Click "New Claim"** → Select **"Text"**
+1. **Click "New Claim"** -> Select **"Text"**
 2. **Enter claim details**:
    - **Title**: Brief summary (e.g., "Assembly line conveyor misalignment")
    - **Description**: Detailed explanation with context
@@ -43,7 +43,7 @@ This guide covers the entire lifecycle of a claim from creation through resoluti
 **Best for**: On-site quick capture, hands-free reporting, time-sensitive issues
 
 **Step-by-step:**
-1. **Click "New Claim"** → Select **"Voice"**
+1. **Click "New Claim"** -> Select **"Voice"**
 2. **Click microphone icon** and start recording
 3. **Speak clearly** for 15-60 seconds:
    - Describe what you see/experienced
@@ -82,7 +82,7 @@ This guide covers the entire lifecycle of a claim from creation through resoluti
 **Best for**: Visual defects, equipment damage, quality issues, screenshots
 
 **Step-by-step:**
-1. **Click "New Claim"** → Select **"Image"**
+1. **Click "New Claim"** -> Select **"Image"**
 2. **Upload photo** (from camera or file)
    - Take clear photo of issue
    - Include context (show full defect)
@@ -205,13 +205,13 @@ Claims move through four statuses:
 
 **IN_PROGRESS** (Being worked on)
 - Someone is actively solving the issue
-- Click status → "Start Work" to move here
+- Click status -> "Start Work" to move here
 - Shows team is engaged
 - Next step: Resolve the issue
 
 **RESOLVED** (Solution found, pending verification)
 - Issue is fixed or solution determined
-- Click status → "Mark Resolved"
+- Click status -> "Mark Resolved"
 - Add resolution notes explaining what was done
 - Customer/manager reviews
 - Next step: Close or reopen if unsatisfactory
@@ -225,17 +225,17 @@ Claims move through four statuses:
 **Status transition example:**
 ```
 OPEN (just created)
-  ↓
+  ?
 (assign to John)
-  ↓
+  ?
 IN_PROGRESS (John starts work)
-  ↓
+  ?
 (John fixes issue)
-  ↓
+  ?
 RESOLVED (solution documented)
-  ↓
+  ?
 (manager verifies)
-  ↓
+  ?
 CLOSED (workflow complete)
 ```
 
@@ -287,9 +287,9 @@ CLOSED (workflow complete)
 **Example conversation:**
 ```
 Manager: "This looks like a repeat from March. Can you check history?"
-  ↳ John: "Checked - yes, same sensor failed before. Ordering replacement."
-  ↳ Manager: "@Maintenance team, this is urgent. Reply when you get part?"
-  ↳ Maintenance Lead: "Part arriving tomorrow. Temporary sensor installed for overnight."
+  ? John: "Checked - yes, same sensor failed before. Ordering replacement."
+  ? Manager: "@Maintenance team, this is urgent. Reply when you get part?"
+  ? Maintenance Lead: "Part arriving tomorrow. Temporary sensor installed for overnight."
 Manager: "Good. Let's prevent this happening again @Operations"
 ```
 
@@ -298,15 +298,15 @@ Manager: "Good. Let's prevent this happening again @Operations"
 **React to comments:**
 1. **Hover over comment**
 2. **Click emoji icon**
-3. **Select emoji**: 👍 ✅ ❤️ 🚀 etc.
+3. **Select emoji**: ? ? <3 ? etc.
 4. **Shows at comment** for quick visual feedback
 
 **Use cases:**
-- 👍 = "Got it, sounds good"
-- ✅ = "Confirmed, all good"
-- ❤️ = "Thanks for help"
-- 🚀 = "Great work, let's ship"
-- 🔥 = "Urgent attention needed"
+- ? = "Got it, sounds good"
+- ? = "Confirmed, all good"
+- <3 = "Thanks for help"
+- ? = "Great work, let's ship"
+- ? = "Urgent attention needed"
 
 ### @Mentions & Notifications
 
@@ -366,19 +366,19 @@ Manager: "Good. Let's prevent this happening again @Operations"
 
 ### SLA Status Indicators
 
-**On-Time** (🟢 Green)
+**On-Time** (? Green)
 - Claim is being handled within deadline
 - Plenty of time remaining
 - Status: "On Track"
 - No action needed
 
-**At-Risk** (🟡 Yellow)
+**At-Risk** (? Yellow)
 - Deadline approaching (typically 2 hours remaining)
 - Should prioritize this claim
 - Time to take action before overdue
 - Status: "Escalation Recommended"
 
-**Overdue** (🔴 Red)
+**Overdue** (? Red)
 - Deadline has passed
 - Immediate action needed
 - May affect compliance metrics
@@ -417,19 +417,19 @@ Manager: "Good. Let's prevent this happening again @Operations"
 **Example intervention:**
 ```
 Dashboard shows claim at-risk
-  ↓
+  ?
 Manager clicks claim
-  ↓
+  ?
 Sees John assigned, status still "OPEN"
-  ↓
+  ?
 Adds comment: "@John Heads up this is at-risk. Need help?"
-  ↓
+  ?
 John responds: "Yes, need access to Line 3"
-  ↓
+  ?
 Manager: "I'll arrange access. Switch to IN_PROGRESS while waiting."
-  ↓
+  ?
 John: "Done. Will start at 2 PM"
-  ↓
+  ?
 Status updated, on track now
 ```
 
@@ -458,18 +458,18 @@ Status updated, on track now
 
 **Layout:**
 ```
-┌─────────────┬──────────────┬────────────┬────────────┐
-│    OPEN     │ IN_PROGRESS  │ RESOLVED   │   CLOSED   │
-├─────────────┼──────────────┼────────────┼────────────┤
-│ Claim #1    │ Claim #5     │ Claim #8   │ Claim #12  │
-│ Priority    │ Priority     │ Priority   │ Priority   │
-│ (Drag me→)  │ (Drag me→)   │ (Drag me→) │            │
-│             │              │            │ Claim #15  │
-│ Claim #3    │ Claim #6     │ Claim #9   │ (archived) │
-│ Priority    │ Priority     │ Priority   │            │
-│             │              │            │ Claim #20  │
-│             │              │            │ (archived) │
-└─────────────┴──────────────┴────────────┴────────────┘
++-------------+--------------+------------+------------+
+|    OPEN     | IN_PROGRESS  | RESOLVED   |   CLOSED   |
++-------------+--------------+------------+------------+
+| Claim #1    | Claim #5     | Claim #8   | Claim #12  |
+| Priority    | Priority     | Priority   | Priority   |
+| (Drag me->)  | (Drag me->)   | (Drag me->) |            |
+|             |              |            | Claim #15  |
+| Claim #3    | Claim #6     | Claim #9   | (archived) |
+| Priority    | Priority     | Priority   |            |
+|             |              |            | Claim #20  |
+|             |              |            | (archived) |
++-------------+--------------+------------+------------+
 ```
 
 **Using Kanban:**
@@ -485,13 +485,13 @@ Status updated, on track now
 
 **Example workflow:**
 ```
-New claim arrives → Appears in OPEN column
-                 ↓
-Manager drags to IN_PROGRESS → Assignee notified
-                             ↓
-Person clicks card, marks "Resolved" → Moves to RESOLVED
-                                      ↓
-Manager verifies → Drags to CLOSED → Workflow complete
+New claim arrives -> Appears in OPEN column
+                 ?
+Manager drags to IN_PROGRESS -> Assignee notified
+                             ?
+Person clicks card, marks "Resolved" -> Moves to RESOLVED
+                                      ?
+Manager verifies -> Drags to CLOSED -> Workflow complete
 ```
 
 ### Calendar View
@@ -537,7 +537,7 @@ Manager verifies → Drags to CLOSED → Workflow complete
           Category: Quality (AI assigned)
 
 11:30 AM - Assigned to Sarah by Manager
-          Status: OPEN → assigned
+          Status: OPEN -> assigned
 
 02:00 PM - Status updated to IN_PROGRESS
           Sarah added comment: "Investigating line 3"
@@ -545,10 +545,10 @@ Manager verifies → Drags to CLOSED → Workflow complete
 04:15 PM - Comment: "Root cause found: sensor calibration"
           File attached: Sensor_logs.pdf
 
-05:00 PM - Status: IN_PROGRESS → RESOLVED
+05:00 PM - Status: IN_PROGRESS -> RESOLVED
           Comment: "Recalibrated sensor, testing now"
 
-Next day 09:00 AM - Status: RESOLVED → CLOSED
+Next day 09:00 AM - Status: RESOLVED -> CLOSED
                     Comment: "Tests passed. Issue solved."
                     Manager verified.
 ```
@@ -585,7 +585,7 @@ Next day 09:00 AM - Status: RESOLVED → CLOSED
 - David gets notification of assignment
 - Opens Intelligate on maintenance tablet
 - Reads comment from manager
-- Changes status: OPEN → IN_PROGRESS
+- Changes status: OPEN -> IN_PROGRESS
 - Walks to conveyor and starts diagnosis
 
 **10:45 AM - Diagnosis Complete**
@@ -611,56 +611,56 @@ Next day 09:00 AM - Status: RESOLVED → CLOSED
 - David installs new belt
 - Tests at full speed
 - Adds comment: "Belt replaced and tested. Full speed confirmed."
-- Changes status: IN_PROGRESS → RESOLVED
+- Changes status: IN_PROGRESS -> RESOLVED
 
 **1:20 PM - Manager Verifies**
 - Manager gets notification of resolution
 - Reviews comments and status
 - Production confirms conveyor working normally
-- Changes status: RESOLVED → CLOSED
+- Changes status: RESOLVED -> CLOSED
 - Adds note: "Resolved - production back to normal"
 
 **Workflow complete**: 3 hours from report to resolution
-- [✓] SLA met (critical deadline 12:15, closed by 1:20)
-- [✓] Cross-functional collaboration (Maintenance + Quality + Management)
-- [✓] Transparency (all updates visible)
-- [✓] Learning (full audit trail for process improvement)
+- [?] SLA met (critical deadline 12:15, closed by 1:20)
+- [?] Cross-functional collaboration (Maintenance + Quality + Management)
+- [?] Transparency (all updates visible)
+- [?] Learning (full audit trail for process improvement)
 
 ---
 
 ## Best Practices
 
 ### Creating Effective Claims
-- ✅ Be specific and clear
-- ✅ Include location and timing
-- ✅ Add evidence (photos, measurements)
-- ✅ Note impact (safety, production, cost)
-- ❌ Don't write vague descriptions
-- ❌ Don't hide important details
+- ? Be specific and clear
+- ? Include location and timing
+- ? Add evidence (photos, measurements)
+- ? Note impact (safety, production, cost)
+- ? Don't write vague descriptions
+- ? Don't hide important details
 
 ### Collaborating Effectively
-- ✅ Respond to comments promptly
-- ✅ Use @mentions appropriately
-- ✅ Provide updates as work progresses
-- ✅ Ask for help when stuck
-- ❌ Don't wait until deadline to communicate
-- ❌ Don't ignore notifications
+- ? Respond to comments promptly
+- ? Use @mentions appropriately
+- ? Provide updates as work progresses
+- ? Ask for help when stuck
+- ? Don't wait until deadline to communicate
+- ? Don't ignore notifications
 
 ### Meeting SLA
-- ✅ Respond immediately to assignments
-- ✅ Update status as you work
-- ✅ Escalate early if you'll miss deadline
-- ✅ Communicate blockers
-- ❌ Don't wait until overdue to escalate
-- ❌ Don't leave claims unassigned
+- ? Respond immediately to assignments
+- ? Update status as you work
+- ? Escalate early if you'll miss deadline
+- ? Communicate blockers
+- ? Don't wait until overdue to escalate
+- ? Don't leave claims unassigned
 
 ### Documentation & Learning
-- ✅ Document complete solution in comments
-- ✅ Attach relevant reference materials
-- ✅ Note lessons learned
-- ✅ Link to similar past claims
-- ❌ Don't close without documenting solution
-- ❌ Don't hide what went wrong
+- ? Document complete solution in comments
+- ? Attach relevant reference materials
+- ? Note lessons learned
+- ? Link to similar past claims
+- ? Don't close without documenting solution
+- ? Don't hide what went wrong
 
 ---
 
