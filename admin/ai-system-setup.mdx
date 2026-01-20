@@ -1,0 +1,111 @@
+---
+title: "AI System Setup"
+description: "Configure AI features for your organization"
+---
+
+## AI Configuration Overview
+
+Configure how AI behaves for your organization.
+
+## LLM Provider Selection
+
+Choose which AI model to use:
+
+### OpenRouter (Default - Cost-Effective)
+- Model: Nemotron Nano 12B V2 VL
+- Cost: Free tier available, pay-per-use
+- Speed: Fast processing
+- Quality: Good for classification
+- When to use: Most claims (budget-conscious)
+
+### Groq (Audio Processing)
+- Model: Whisper Large V3 Turbo
+- Cost: Pay-per-use
+- Speed: Real-time transcription
+- Quality: Excellent audio
+- When to use: All voice claims
+
+### OpenAI (Premium)
+- Model: GPT-4, GPT-4 Vision
+- Cost: Premium pricing
+- Speed: Varies
+- Quality: Best accuracy
+- When to use: Critical classifications, complex analysis
+
+## Configuration Settings
+
+### Classification Confidence Threshold
+
+Set minimum confidence for AI suggestions:
+- **High threshold (>80%)**: Only very confident suggestions
+  - Pro: Fewer wrong classifications
+  - Con: More claims need manual review
+
+- **Medium threshold (>60%)**: Balanced approach
+  - Pro: Good automation, reasonable accuracy
+  - Con: Some errors possible
+
+- **Low threshold (>40%)**: Aggressive automation
+  - Pro: Minimal manual work
+  - Con: More corrections needed
+
+### Priority Assignment Rules
+
+Configure how AI assigns priority:
+- Critical: Safety concerns, urgent keywords
+- High: Major issues, equipment down
+- Medium: Standard issues
+- Low: Routine items
+
+### Root Cause Categories
+
+Define the root cause options:
+1. Equipment failure
+2. Training gap
+3. Process error
+4. Supplier issue
+5. Material defect
+6. Environmental
+7. Maintenance backlog
+8. Communication breakdown
+9. Human error
+
+## Testing AI Configuration
+
+1. Create sample claims with various inputs
+2. Review AI classifications
+3. Check confidence scores
+4. Note any pattern errors
+5. Adjust configuration if needed
+6. Retest until satisfied
+
+## Monitoring AI Performance
+
+Track:
+- Classification accuracy
+- Override rate (how often users change AI suggestion)
+- Processing time
+- Cost per claim
+- User satisfaction
+
+High override rate suggests:
+- AI needs retraining
+- Thresholds need adjustment
+- Categories not clear
+- Process needs change
+
+## Disabling AI Features
+
+If AI not working well:
+- Disable auto-classification
+- Use manual categorization
+- Revisit AI configuration
+- Check sample claims
+- Adjust thresholds
+
+---
+
+## Next Steps
+
+- [Agent Management](/admin/agent-management)
+- [Knowledge Base Admin](/admin/knowledge-base-admin)

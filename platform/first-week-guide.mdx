@@ -1,0 +1,426 @@
+---
+title: "First Week Guide"
+description: "Day-by-day onboarding roadmap for all users"
+---
+
+## Overview
+
+Your first week with Intelligate is critical for adoption and productivity. This guide provides a structured approach whether you're an admin, manager, or employee.
+
+<Tip>
+This guide is designed for you to follow along, checking off activities as you complete them.
+</Tip>
+
+---
+
+## For Administrators
+
+### Day 1: Organization Setup
+
+**Morning (30 minutes)**
+- [ ] Create organization account via signup page
+- [ ] Receive admin credentials
+- [ ] Login to Intelligate
+- [ ] Verify organization name and branding
+- [ ] Note admin dashboard features
+
+**Afternoon (1 hour)**
+- [ ] Access Keycloak Admin Console
+- [ ] Review available roles (admin, manager, employee)
+- [ ] Explore user management interface
+- [ ] Create test user account in Keycloak
+- [ ] Assign roles to test user
+
+**End of Day**
+- [ ] Document organization setup (screenshot config)
+- [ ] Create admin checklist for next steps
+- [ ] Plan department structure
+
+### Day 2: Configure Departments & Categories
+
+**Morning (1 hour)**
+- [ ] Login to Intelligate Admin Console
+- [ ] Create departments matching your structure:
+  - [ ] Production
+  - [ ] Quality Control
+  - [ ] Maintenance
+  - [ ] Logistics
+  - [ ] Safety
+  - [ ] Any custom departments
+- [ ] Assign department managers
+- [ ] Verify department visibility
+
+**Afternoon (1 hour)**
+- [ ] Configure custom claim categories
+- [ ] Map categories to departments
+- [ ] Review default SLA policies
+- [ ] Customize SLA timelines for your org:
+  - [ ] Critical priority targets
+  - [ ] High priority targets
+  - [ ] Medium priority targets
+  - [ ] Low priority targets
+
+**End of Day**
+- [ ] Test creating claim in each category
+- [ ] Verify category-to-department routing
+- [ ] Review SLA calculations
+
+### Day 3: User Onboarding
+
+**Morning (1.5 hours)**
+- [ ] Bulk add team members in Keycloak:
+  - [ ] Add managers for each department
+  - [ ] Assign MANAGER role
+  - [ ] Send activation emails
+- [ ] Add pilot group of employees:
+  - [ ] 5-10 people from different departments
+  - [ ] Assign EMPLOYEE role
+  - [ ] Send activation emails
+
+**Afternoon (1 hour)**
+- [ ] Verify users can login
+- [ ] Check that roles sync correctly
+- [ ] Test user creation workflow
+- [ ] Prepare communication to team about launch
+
+**End of Day**
+- [ ] All pilot users active
+- [ ] Team trained on login process
+- [ ] Support contact information shared
+
+### Day 4: Business Rules & Automation
+
+**Morning (1 hour)**
+- [ ] Create auto-routing rules:
+  - [ ] Rule: Quality claims → Quality department
+  - [ ] Rule: Safety claims → Safety department
+  - [ ] Rule: Logistics claims → Logistics department
+- [ ] Test each rule with sample claim
+
+**Afternoon (1 hour)**
+- [ ] Create escalation rules:
+  - [ ] Rule: Critical claims auto-notify manager
+  - [ ] Rule: High priority auto-assign if not assigned in 2 hours
+  - [ ] Rule: Overdue claims escalate to director
+- [ ] Create notification preferences
+- [ ] Test escalations
+
+**End of Day**
+- [ ] All automation rules tested
+- [ ] Business rules documented
+- [ ] Ready for full team launch
+
+### Day 5: AI Configuration & Knowledge Base
+
+**Morning (1 hour)**
+- [ ] Gather company documentation:
+  - [ ] Standard operating procedures
+  - [ ] Safety guidelines
+  - [ ] Troubleshooting guides
+  - [ ] Historical resolutions (if available)
+- [ ] Organize documents by department
+- [ ] Prepare for bulk upload
+
+**Afternoon (1 hour)**
+- [ ] Go to Admin Console → Knowledge Base
+- [ ] Upload documentation:
+  - [ ] Quality procedures
+  - [ ] Safety protocols
+  - [ ] Maintenance guides
+  - [ ] Logistics standards
+- [ ] Organize by department
+- [ ] Tag for easy search
+
+**Late Afternoon (30 minutes)**
+- [ ] Create your first AI agent:
+  - [ ] Name: "Operations Assistant"
+  - [ ] Purpose: Help teams with claim classification
+  - [ ] Link knowledge base
+  - [ ] Test with sample query
+
+**End of Day**
+- [ ] Knowledge base populated
+- [ ] AI agents configured
+- [ ] Team ready to use intelligent features
+
+**Week 1 Accomplishments (Admin)**
+✅ Organization configured
+✅ All departments and categories setup
+✅ Users added and roles assigned
+✅ Business rules and automation active
+✅ Knowledge base populated
+✅ AI agents configured and tested
+
+---
+
+## For Managers
+
+### Day 1-2: Explore Intelligate
+
+**Day 1 (30 minutes)**
+- [ ] Receive manager invitation from admin
+- [ ] Create account in Keycloak with admin-provided credentials
+- [ ] Login to Intelligate
+- [ ] Explore manager dashboard
+- [ ] Review department claims (should be empty)
+- [ ] Check team member list
+- [ ] Review SLA policy for your department
+
+**Day 2 (30 minutes)**
+- [ ] Explore Analytics:
+  - [ ] View dashboard widgets
+  - [ ] Review KPI metrics
+  - [ ] Check team workload
+- [ ] Explore Kanban Board:
+  - [ ] See workflow columns
+  - [ ] Understand status transitions
+  - [ ] Review filtering options
+- [ ] Create your first test claim
+
+### Day 3-4: Create Sample Claims & Collaborate
+
+**Day 3 (1 hour)**
+- [ ] Create test claims (3-5):
+  - [ ] Text claim
+  - [ ] Voice claim (test voice transcription)
+  - [ ] Image claim (test OCR)
+  - [ ] Try all input methods
+- [ ] Review how AI classified each
+- [ ] Assign to team members
+- [ ] Add comments to practice collaboration
+
+**Day 4 (1 hour)**
+- [ ] Assign claims to self first
+- [ ] Move through workflow:
+  - [ ] Assign to team member
+  - [ ] Add comment with feedback
+  - [ ] Change status to IN_PROGRESS
+  - [ ] Mark as RESOLVED
+  - [ ] Close the claim
+- [ ] Review activity log to see all changes
+
+### Day 5: Configure Workflows
+
+**Morning (30 minutes)**
+- [ ] Review department workload patterns
+- [ ] Plan business rules your team needs:
+  - [ ] Auto-routing criteria?
+  - [ ] Escalation triggers?
+  - [ ] Notification rules?
+- [ ] Document desired workflows
+
+**Afternoon (30 minutes)**
+- [ ] Work with admin to implement:
+  - [ ] Create automation rules
+  - [ ] Test rules with sample claims
+  - [ ] Enable for team
+
+**End of Week**
+- [ ] Understand full workflow
+- [ ] Created and managed sample claims
+- [ ] Configured team automation
+- [ ] Ready to train team
+
+**Week 1 Accomplishments (Manager)**
+✅ Learned Intelligate interface
+✅ Tested all input methods
+✅ Practiced collaboration
+✅ Understood analytics
+✅ Configured team workflows
+
+---
+
+## For Employees
+
+### Day 1: Login & Explore
+
+**Morning (15 minutes)**
+- [ ] Receive login credentials from manager
+- [ ] Visit Intelligate login page
+- [ ] Enter credentials
+- [ ] View your dashboard
+- [ ] See employee-level features and permissions
+- [ ] Review available actions
+
+**Afternoon (15 minutes)**
+- [ ] Explore interface:
+  - [ ] Find "New Claim" button
+  - [ ] See claims list/dashboard
+  - [ ] Review team section
+  - [ ] Check notifications
+- [ ] Read Quick Start guide
+- [ ] Ask manager if confused
+
+### Day 2-3: Create Your First Claims
+
+**Day 2 (30 minutes)**
+- [ ] Create text claim:
+  - [ ] Find simple issue to report
+  - [ ] Write clear description
+  - [ ] Select appropriate category
+  - [ ] Select your department
+  - [ ] Submit
+- [ ] Review claim you created
+- [ ] See AI classification
+- [ ] Watch for manager assignment notification
+
+**Day 3 (30 minutes)**
+- [ ] Create voice claim:
+  - [ ] Think of issue to report
+  - [ ] Click "New Claim" → "Voice"
+  - [ ] Record clear description (15-30 seconds)
+  - [ ] Review auto-transcription
+  - [ ] Select category
+  - [ ] Submit
+- [ ] See if transcription was accurate
+- [ ] Notice speed vs typing
+
+**Optional: Image Claim**
+- [ ] Create image claim:
+  - [ ] Take photo of something (can be training photo)
+  - [ ] Upload to Intelligate
+  - [ ] See auto-extracted text
+  - [ ] Add description if needed
+  - [ ] Submit
+
+### Day 4-5: Collaboration & Management
+
+**Day 4 (30 minutes)**
+- [ ] Review claims assigned to you:
+  - [ ] See which claims are "yours"
+  - [ ] Read assigned claim details
+  - [ ] Understand what's being asked
+- [ ] Add comment to assigned claim:
+  - [ ] Type response/update
+  - [ ] See comment appear
+  - [ ] Watch for notifications
+- [ ] Practice @mentions:
+  - [ ] Tag manager if you need help
+  - [ ] Manager gets notification
+
+**Day 5 (30 minutes)**
+- [ ] Update claim status:
+  - [ ] Find claim assigned to you
+  - [ ] Change from OPEN → IN_PROGRESS
+  - [ ] Add comment: "Working on this"
+  - [ ] Later: change to RESOLVED
+  - [ ] Add resolution note
+  - [ ] Mark as CLOSED
+- [ ] View dashboard:
+  - [ ] See fewer open claims
+  - [ ] See completed claims
+- [ ] Celebrate first complete workflow!
+
+**End of Week Checklist (Employee)**
+✅ Successfully logged in
+✅ Created 2-3 sample claims
+✅ Used different input methods
+✅ Received feedback from manager
+✅ Collaborated via comments
+✅ Completed first full workflow
+✅ Comfortable with basic operations
+
+---
+
+## Common Week 1 Scenarios
+
+### Scenario 1: "I'm Struggling with Setup"
+
+**Solution**: You're likely in the admin role
+- [ ] Reach out to Intelligate support
+- [ ] Share screenshot of issue
+- [ ] Check Keycloak logs for errors
+- [ ] Verify all services are running (postgres, backend, frontend)
+- [ ] Review [Admin Console](/admin/initial-setup) guide
+
+### Scenario 2: "My Team Isn't Adopting Intelligate"
+
+**Solution**: If you're a manager
+- [ ] Start with pilot group (5-10 people)
+- [ ] Train them personally
+- [ ] Create test claims together
+- [ ] Show time savings vs old process
+- [ ] Gradually roll out to full team
+- [ ] Celebrate early wins
+
+### Scenario 3: "AI Classification Seems Wrong"
+
+**Solution**: This improves over time
+- [ ] Classification confidence score shows certainty
+- [ ] You can override and correct
+- [ ] Each correction trains the AI
+- [ ] Patterns take time to recognize
+- [ ] More data = better accuracy
+- [ ] Check [AI Overview](/ai/ai-agents-overview) for details
+
+### Scenario 4: "Claims Not Being Assigned to Right Department"
+
+**Solution**: Check your business rules
+- [ ] Verify rules are configured correctly
+- [ ] Check rule priorities (rules execute in order)
+- [ ] Test with sample claim
+- [ ] Review [Business Rules](/platform/business-rules-automation) guide
+- [ ] Consult admin for complex scenarios
+
+---
+
+## Week 2 & Beyond
+
+After your first week:
+
+- **Focus on adoption**: Get full team using Intelligate
+- **Refine workflows**: Adjust rules based on real usage
+- **Expand features**: Try AI assistants, advanced analytics
+- **Gather feedback**: Ask team what's working/not working
+- **Continuous improvement**: Update knowledge base with new solutions
+
+### Recommended Next Readings
+
+**For Employees:**
+- [Claim Lifecycle](/platform/claim-lifecycle) - Master workflows
+- [SLA Compliance](/platform/claim-lifecycle) - Understanding deadlines
+
+**For Managers:**
+- [Dashboard Overview](/platform/dashboard-overview) - Advanced analytics
+- [Business Rules](/platform/business-rules-automation) - Complex automation
+- [User Management](/platform/user-management) - Team administration
+
+**For Admins:**
+- [Admin Console](/admin/initial-setup) - Full admin features
+- [AI Layer](/ai/ai-agents-overview) - Advanced AI configuration
+- [Organization Configuration](/admin/initial-setup) - System tuning
+
+---
+
+## Success Metrics
+
+### Day 5 Goals
+- [ ] Organization fully configured (admin)
+- [ ] 10-20 test claims created across team (admin/manager)
+- [ ] All team members can login (admin)
+- [ ] At least 50% of team created 1 claim (manager/employee)
+- [ ] Zero critical issues blocking work (all)
+
+### Week 1 Success Indicators
+- ✅ All systems running smoothly
+- ✅ Team understands basic workflow
+- ✅ Business rules working as intended
+- ✅ AI classification showing value
+- ✅ Team excited about features
+
+### Red Flags (Need Help)
+- ❌ Team still can't login by Day 3
+- ❌ Claims not routing to correct departments
+- ❌ Frequent timeout/performance issues
+- ❌ Team expressing strong resistance
+- ❌ Critical business rule not working
+
+**If you see red flags:** Contact Intelligate support with specific issue details.
+
+---
+
+## Next Steps
+
+- [Core Workflows](/platform/claim-lifecycle) - After basics, master advanced workflows
+- [Administration](/admin/initial-setup) - Full system configuration
+- [AI Layer](/ai/ai-agents-overview) - Leverage intelligent features

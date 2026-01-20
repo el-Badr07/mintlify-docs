@@ -1,0 +1,205 @@
+---
+title: "Use Cases"
+description: "Real-world scenarios where Intelligate delivers value"
+---
+
+## Quality Defect Management
+
+### Scenario
+A quality inspector discovers a manufacturing defect in the production line. Instead of filling out multiple forms, they:
+
+1. **Capture the issue** via the mobile app using a voice note while on the production floor
+2. **Add photos** of the defective unit for documentation
+3. Intelligate **automatically classifies** it as "Quality" with "High" priority based on defect type
+4. **Routes to Quality Manager** in real-time
+5. Quality team receives **instant notification** with full context
+6. Comments and escalation tracking ensure **rapid resolution**
+
+### Benefits
+- Defects documented in minutes instead of hours
+- AI classification ensures consistent categorization
+- Management visibility enables immediate response
+- Historical defect tracking prevents recurring issues
+
+---
+
+## Safety Incident Response
+
+### Scenario
+A safety incident occurs on the factory floor. A supervisor needs to report it immediately:
+
+1. **Creates text claim** from phone with incident details (what happened, who was involved, severity)
+2. Intelligate **automatically routes** to Safety Manager with "Critical" priority
+3. **Escalation chain** triggered automatically due to Critical priority
+4. Multiple safety team members receive **@mention notifications**
+5. Team **collaborates** in the claim with comments and files
+6. **Complete incident log** available for compliance and investigation
+
+### Benefits
+- Immediate incident documentation for safety compliance
+- Automatic escalation ensures no critical incidents slip through
+- Collaboration prevents communication gaps
+- Full audit trail satisfies regulatory requirements
+
+---
+
+## Logistics Issue Tracking
+
+### Scenario
+A shipping delay occurs affecting multiple orders. A logistics coordinator reports it:
+
+1. **Voice claim** created while on the phone with supplier: "Shipment delayed 48 hours"
+2. Groq Whisper automatically **transcribes** the voice recording
+3. Intelligate **classifies** as "Logistics" with "Medium" priority
+4. **Auto-routes** to Logistics Manager
+5. Team uses **Kanban board** to track progress
+6. **Comments** track communication with suppliers
+7. Resolution documented for future supplier performance reviews
+
+### Benefits
+- Quick reporting during active problem-solving
+- Automatic transcription removes documentation burden
+- Visibility prevents cascade failures
+- Historical data informs supplier management
+
+---
+
+## Maintenance Request Management
+
+### Scenario
+Equipment breaks down in the facility. Operator needs to request maintenance:
+
+1. **Creates image claim** - takes photo of broken equipment and machine display
+2. GPT-4 Vision automatically **extracts text** from machine display (error codes)
+3. **Root cause prediction** based on error codes and historical maintenance
+4. **Routes to Maintenance team** with suggested solutions
+5. Maintenance specialist checks **historical claims** for similar equipment issues
+6. Uses **comments** to request clarification from operator
+7. **Activity log** tracks maintenance history for predictive maintenance
+
+### Benefits
+- Visual documentation prevents miscommunication
+- AI suggestions speed up troubleshooting
+- Historical context reduces resolution time
+- Data informs predictive maintenance planning
+
+---
+
+## Cross-Department Escalation
+
+### Scenario
+A customer complaint involves quality issue that might also be a logistics problem. Report flows through multiple departments:
+
+1. **Employee creates text claim**: "Customer received damaged product"
+2. Intelligate **classifies** as "Quality" with "High" priority initially
+3. Quality Manager reviews and **adds comment**: "Also appears to be shipping damage"
+4. **Escalates claim** to both Quality and Logistics managers
+5. **Cross-functional collaboration** via comments and file attachments
+6. Claim status moves through both workflows
+7. **Root cause** determined: Quality defect + Logistics damage
+8. **Combined resolution** addresses both issues
+
+### Benefits
+- Complex issues tracked in single location, not scattered emails
+- No duplicated effort or communication gaps
+- Clear ownership even with multiple departments
+- Complete record for learning and prevention
+
+---
+
+## SLA Compliance Monitoring
+
+### Scenario
+Manager needs to monitor team SLA performance:
+
+1. **Dashboard shows** 23 open claims, 78% SLA compliance rate
+2. **At-Risk indicator** shows 4 claims approaching deadline (yellow warning)
+3. Manager **uses Kanban board** to see which claims need attention
+4. **Clicks on at-risk claim** and sees full context and assignee
+5. **Adds comment** to provide support or reassign if needed
+6. **Comments trigger notification** to assignee
+7. **SLA status updated** as work progresses
+
+### Benefits
+- Proactive management prevents breaches
+- Visual indicators surface problems early
+- One-click access to full context
+- Historical SLA data informs workload planning
+
+---
+
+## Analytics for Process Improvement
+
+### Scenario
+Operations Director needs data to improve processes:
+
+1. **Pulls dashboard** showing all-time metrics
+2. **Trends analysis** reveals quality defects increased 15% in March
+3. **Category breakdown** shows increase concentrated in Assembly department
+4. **Root cause analysis** available from past claims
+5. **Exports data to CSV** for detailed spreadsheet analysis
+6. **Generates PDF report** for executive presentation
+7. Data reveals **process change in early March** correlates with issue spike
+
+### Benefits
+- Data-driven insights guide process improvements
+- Historical trends prevent reactive decisions
+- Easy export supports analysis workflows
+- Board-ready reports enable strategic decisions
+
+---
+
+## Knowledge Base Integration
+
+### Scenario
+Maintenance team encounters recurring equipment failure:
+
+1. Technician **uses chat assistant** to search knowledge base
+2. **Queries**: "What's the fix for motor bearing noise on Line 3?"
+3. Assistant **retrieves relevant procedures** from knowledge base
+4. **Links to similar historical claims** with solutions
+5. **Steps from past resolution** help current technician
+6. **Faster resolution** thanks to institutional knowledge
+
+### Benefits
+- Reduces time to resolution
+- Prevents re-learning past problems
+- Captures institutional knowledge
+- Trains new team members
+
+---
+
+## First-Time Configuration (Admin)
+
+### Scenario
+New manufacturer wants to implement Intelligate:
+
+1. Admin **sets up organization** with company details
+2. **Configures SSO** to use existing corporate credentials (Keycloak)
+3. **Creates departments**: Production, Quality, Logistics, Maintenance, Safety
+4. **Defines categories** specific to manufacturing: Defect, Downtime, Delay, Incident, Other
+5. **Sets SLA policies**:
+   - Critical: 4-hour response, 8-hour resolution
+   - High: 8-hour response, 24-hour resolution
+   - Medium: 24-hour response, 72-hour resolution
+   - Low: 48-hour response, 1-week resolution
+6. **Creates business rules** for auto-routing
+7. **Configures AI agents** for different departments
+8. **Imports knowledge base** from existing documentation
+
+### Benefits
+- Quick onboarding with guided setup
+- Standardized processes from day one
+- AI agents immediately useful
+- Team adoption faster with familiar processes
+
+---
+
+## Next Steps
+
+Ready to implement these use cases?
+
+- [Quickstart](/platform/quickstart) - Get set up in minutes
+- [Core Workflows](/platform/claim-lifecycle) - Master all features
+- [Business Rules](/platform/business-rules-automation) - Automate your workflows
+- [Admin Console](/admin/initial-setup) - Full system configuration

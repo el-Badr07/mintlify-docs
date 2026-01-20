@@ -1,0 +1,99 @@
+---
+title: "SSO & Keycloak Setup"
+description: "Configure Single Sign-On integration"
+---
+
+## What is SSO?
+
+Single Sign-On (SSO) lets employees use their corporate credentials to login to Intelligate. No separate passwords.
+
+## Keycloak Overview
+
+**Keycloak** is the identity provider (IdP) that manages:
+- User accounts and passwords
+- Role assignments
+- Organization management
+- Token generation
+- Authentication policies
+
+## Keycloak Admin Console
+
+**Access**: `https://api.64.226.86.247.sslip.io/keycloak`
+
+**Default credentials**: admin / ChangeMe123Admin (CHANGE THIS!)
+
+## User Management in Keycloak
+
+### Creating Users
+
+1. **Realms** → Select your realm
+2. **Users** → Create new user
+3. Fill in username, email, name
+4. Set temporary password
+5. Assign realm roles
+6. User receives email invitation
+
+### Assigning Roles
+
+1. **User** → **Role Mapping**
+2. Available roles: admin, manager, employee
+3. Add roles to user
+4. Roles sync to Intelligate on next login
+
+### Managing Organizations
+
+Organizations created during signup:
+- Available in Keycloak realms
+- Users belong to organization
+- Intelligate syncs organization data
+
+## Syncing Roles to Intelligate
+
+**Automatic process:**
+1. User has role in Keycloak
+2. User logs in
+3. JWT token includes role
+4. Kong Gateway validates JWT
+5. Kong injects X-User-Roles header
+6. Backend reads header and syncs role
+
+**Changes take effect immediately** on next login.
+
+---
+
+## Configuration
+
+### Keycloak Settings
+
+**Environment variables** (if self-hosted):
+```
+KC_HOSTNAME_URL=https://api.64.226.86.247.sslip.io
+KC_HTTP_ENABLED=true
+KC_PROXY_HEADERS=forwarded
+```
+
+### Frontend Configuration
+
+Auth Service URL points to Keycloak:
+- Signup: `/auth/signup`
+- Login: `/auth/login`
+- Token refresh: `/auth/refresh`
+
+## Troubleshooting
+
+**Can't login?**
+- Check Keycloak is running
+- Verify user exists in Keycloak
+- Check user is active (not disabled)
+
+**Role not updating?**
+- Logout and login again
+- Check role assigned in Keycloak
+- Wait a few seconds for sync
+
+---
+
+## Next Steps
+
+- [Access Control](/platform/access-control)
+- [User Management](/platform/user-management)

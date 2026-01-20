@@ -1,0 +1,94 @@
+---
+title: "Organization Configuration"
+description: "Customize departments, categories, and SLA policies"
+---
+
+## Organization Settings
+
+Configure your organization to match your business structure and needs.
+
+### Department Management
+
+Create departments matching your organizational structure:
+
+**Default departments:**
+- PRODUCTION
+- QUALITY_CONTROL
+- MAINTENANCE
+- LOGISTICS
+- SAFETY
+- HR
+
+**To add custom department:**
+1. Admin Console → Organization
+2. Departments section
+3. Add new department
+4. Assign manager
+5. Configure SLA rules for department
+
+**Benefits:**
+- Claims route to correct team
+- Team sees only their claims
+- Workload visibility
+- Performance tracking per department
+
+### Claim Categories
+
+Define what types of claims you accept:
+
+**Customize categories:**
+1. Admin Console → Categories
+2. Edit default or create new
+3. Assign to departments
+4. Set category-specific SLA
+
+**Best practices:**
+- 5-10 categories (not too many)
+- Clear naming
+- Exclude "Other" when possible
+- Match your business terms
+
+### SLA Policies
+
+Configure response and resolution deadlines:
+
+**Per priority level:**
+| Priority | Response Time | Resolution Time |
+|----------|----------|----------|
+| Critical | 4 hours | 8 hours |
+| High | 8 hours | 24 hours |
+| Medium | 24 hours | 72 hours |
+| Low | 48 hours | 1 week |
+
+**Customize for your needs:**
+- Safety claims may need 4-hour response
+- Maintenance may need 24-hour response
+- Logistics may exclude weekends
+
+### Notification Settings
+
+Control how team is notified:
+- Email on assignment
+- Email on escalation
+- Email on resolution
+- Dashboard notifications
+
+---
+
+## Business Rules
+
+Create automatic routing and escalation:
+
+**Example rules:**
+- If category = Quality → Route to Quality dept
+- If priority = Critical → Notify manager
+- If assigned > 8 hours → Escalate
+
+See [Business Rules](/platform/business-rules-automation) for details.
+
+---
+
+## Next Steps
+
+- [SLA Policies](/admin/sla-policies) - Configure deadlines
+- [Business Rules](/platform/business-rules-automation) - Create automation

@@ -1,0 +1,125 @@
+---
+title: "Automation Workflows"
+description: "Create automated processes for claims management"
+---
+
+## Automation Overview
+
+Automate repetitive tasks to save time and reduce manual errors.
+
+## Types of Automation
+
+### Auto-Routing
+Automatically send claims to correct department:
+- If category = Quality → Route to Quality
+- If safety concern → Route to Safety + Manager
+- If vendor issue → Route to Procurement
+
+### Auto-Assignment
+Automatically assign to specific person:
+- If Quality claim → Assign to John (quality lead)
+- If maintenance → Round-robin among mechanics
+- If critical → Auto-assign to manager
+
+### Auto-Notification
+Automatically notify relevant people:
+- If critical → Email entire department
+- If safety → @mention Safety Officer
+- If escalated → Notify director
+
+### Auto-Status-Update
+Automatically update status:
+- If resolved and approved → Auto-close after 24 hours
+- If overdue → Flag automatically
+- If at-risk → Add to priority board
+
+## Creating Workflows
+
+1. Admin Console → **Workflows**
+2. Click **"Add Workflow"**
+3. Define trigger:
+   - When new claim created
+   - When status changes
+   - When time passes
+   - When comment added
+4. Define conditions:
+   - If category = X
+   - If priority = Y
+   - If assigned to Z
+5. Define actions:
+   - Route to department
+   - Assign to person
+   - Send notification
+   - Update status
+6. Test workflow
+7. Enable for all users
+
+## Workflow Examples
+
+### Example 1: Quality Claims Fast Track
+
+**Trigger**: New claim created
+**Condition**: Category = Quality AND Priority >= High
+**Actions**:
+1. Route to Quality department
+2. Assign to Sarah (quality lead)
+3. Add to "Red Flag" report
+4. Notify quality manager
+**Result**: High-priority quality issues handled immediately
+
+### Example 2: Preventive Maintenance
+
+**Trigger**: Resolved claim
+**Condition**: Category = Maintenance AND same equipment as past 2 claims
+**Actions**:
+1. Flag as "recurring issue"
+2. Create improvement task
+3. Notify maintenance supervisor
+4. Link to knowledge base article
+**Result**: Recurring problems detected and addressed
+
+### Example 3: Safety Escalation
+
+**Trigger**: New claim OR comment added
+**Condition**: Keyword = "injury" OR Category = Safety
+**Actions**:
+1. Auto-escalate to Safety Manager
+2. Email Safety Officer
+3. Copy CEO
+4. Create audit trail
+5. Lock claim from editing (immutable history)
+**Result**: Safety incidents get executive attention
+
+## Best Practices
+
+- **Start simple**: One rule at a time
+- **Test first**: Run on sample claims
+- **Monitor results**: Check if working as intended
+- **Adjust frequently**: Fine-tune based on usage
+- **Document**: Keep list of active workflows
+- **Avoid conflicts**: Different rules shouldn't contradict
+- **Review regularly**: Disable unused workflows
+
+## Troubleshooting
+
+**Workflow not triggering?**
+- Check conditions are correct
+- Verify trigger happening
+- Test with manual claim
+
+**Too many notifications?**
+- Adjust notification frequency
+- Add conditions to reduce triggers
+- Consolidate into digests
+
+**Wrong routing?**
+- Check condition logic
+- Verify department assignments
+- Review rule priority order
+
+---
+
+## Next Steps
+
+- [SLA Policies](/admin/sla-policies)
+- [Business Rules](/platform/business-rules-automation)

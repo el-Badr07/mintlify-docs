@@ -1,0 +1,53 @@
+---
+title: "Data Security"
+description: "Privacy, compliance, and secure data handling"
+---
+
+## Security Overview
+
+Intelligate implements enterprise-grade security for manufacturing operations.
+
+### Data Protection
+
+- **Encryption in transit**: HTTPS/TLS for all communications
+- **Database security**: PostgreSQL with encrypted passwords
+- **Role-based filtering**: Data access controlled by permissions
+- **No plaintext storage**: Passwords stored in Keycloak only
+
+### Authentication
+
+- **Keycloak**: Central identity provider
+- **SSO**: Use corporate credentials
+- **No passwords in app**: Delegated to Keycloak
+- **JWT tokens**: Validated by Kong Gateway
+
+### Audit Logging
+
+- All user actions logged
+- Claim changes tracked
+- User access recorded
+- Compliance-ready format
+
+### Compliance
+
+- **GDPR**: Data privacy controls
+- **HIPAA-compatible**: Audit trails and encryption
+- **SOC 2**: Security standards
+- **Data retention**: Configurable policies
+
+---
+
+## Best Practices
+
+- Use strong passwords in Keycloak
+- Enable MFA if available
+- Regular access reviews
+- Monitor audit logs
+- Keep software updated
+
+---
+
+## Next Steps
+
+- [Access Control](/platform/access-control)
+- [SSO Setup](/platform/sso-keycloak-setup)

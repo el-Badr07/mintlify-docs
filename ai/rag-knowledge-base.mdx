@@ -1,0 +1,228 @@
+---
+title: "RAG Knowledge Base"
+description: "Retrieval Augmented Generation for accurate AI responses"
+---
+
+## What is RAG?
+
+**RAG = Retrieval Augmented Generation**
+
+Instead of AI making up answers, it retrieves relevant documents and uses those to generate responses.
+
+## How RAG Works
+
+**Without RAG** (hallucination risk):
+```
+Question: "What's our conveyor belt maintenance schedule?"
+AI thinks: "I think we maintain conveyors monthly..."
+Result: Guessed answer (might be wrong!)
+```
+
+**With RAG** (grounded in facts):
+```
+Question: "What's our conveyor belt maintenance schedule?"
+System retrieves: "Conveyor maintenance schedule.pdf"
+AI reads: "Monthly oil changes, quarterly belt inspection..."
+Result: Accurate answer grounded in documentation
+```
+
+## RAG Benefits
+
+✅ **Accuracy**: Answers grounded in real documents
+✅ **Consistency**: Same procedures every time
+✅ **Current**: Uses latest documentation
+✅ **Traceable**: Can cite sources
+✅ **Preventive**: Reduces hallucinations
+
+## Knowledge Base Structure
+
+### By Department
+
+**Quality Department**
+- Quality control procedures
+- Defect classification guide
+- Testing standards
+- Historical resolutions
+
+**Maintenance Department**
+- Equipment manuals
+- Maintenance schedules
+- Troubleshooting guides
+- Parts specifications
+
+**Safety Department**
+- Safety procedures
+- Emergency response plans
+- OSHA standards
+- Incident protocols
+
+**Logistics Department**
+- Shipping procedures
+- Supplier contacts
+- Inventory management
+- Delivery standards
+
+### By Document Type
+
+**Procedures**
+- Step-by-step instructions
+- Standard operating procedures
+- Process flows
+- Checklists
+
+**Guides**
+- Troubleshooting guides
+- How-to documents
+- Best practices
+- Training materials
+
+**Reference**
+- Equipment specs
+- Part numbers
+- Contact information
+- Standards documents
+
+**Historical**
+- Past resolutions
+- Case studies
+- Lessons learned
+- Success stories
+
+## Building Knowledge Base
+
+### Gathering Documents
+
+1. **Existing documentation**:
+   - Company procedures
+   - Training materials
+   - Equipment manuals
+   - Policy documents
+
+2. **Historical data**:
+   - Past resolved claims (the "why" and solution)
+   - Maintenance logs
+   - Quality records
+   - Safety incidents
+
+3. **External resources**:
+   - Industry standards
+   - OSHA guidelines
+   - Supplier documentation
+   - Regulatory requirements
+
+### Organizing Documents
+
+**Good organization**:
+```
+Knowledge Base/
+├── Quality/
+│   ├── Defect Classification
+│   ├── Testing Procedures
+│   └── Calibration Guide
+├── Maintenance/
+│   ├── Equipment Manuals
+│   ├── Maintenance Schedule
+│   └── Troubleshooting
+├── Safety/
+│   ├── Emergency Procedures
+│   ├── OSHA Standards
+│   └── Incident Response
+└── Logistics/
+    ├── Shipping Guide
+    ├── Supplier List
+    └── Inventory Procedures
+```
+
+### Tagging Documents
+
+Add metadata for search:
+- Department: Quality, Maintenance, Safety, Logistics
+- Category: Procedure, Guide, Reference, Historical
+- Tags: Conveyor, Hydraulic, Safety, etc.
+- Last updated: Date
+- Version: Current, Archived
+
+## Using RAG in Agents
+
+### Automatic Retrieval
+
+When user asks agent question:
+1. System searches knowledge base
+2. Finds relevant documents (usually top 3-5)
+3. Passes to AI along with question
+4. AI uses documents to generate response
+5. Provides citation: "Per Maintenance Schedule v2.3"
+
+### Citation & Traceability
+
+Responses include:
+- Direct answers
+- Source documents
+- Relevant procedures
+- Links to full documents
+
+Example:
+```
+Q: "How often should we calibrate the press?"
+A: "Every 30 days per Equipment Manual Section 4.2.
+   Last calibration: Jan 15, 2025.
+   Next due: Feb 15, 2025.
+   See: press_calibration_guide.pdf"
+```
+
+## Maintaining Knowledge Base
+
+### Monthly Review
+- Update changed procedures
+- Add new learnings from recent claims
+- Fix broken links
+- Update contact information
+
+### Quarterly Audit
+- Verify all procedures still current
+- Identify gaps (questions not answerable)
+- Remove obsolete documents
+- Reorganize if needed
+
+### When Processes Change
+- Update relevant documents IMMEDIATELY
+- Notify team of changes
+- Retrain agents if needed
+- Archive old versions
+
+## Knowledge Base Quality
+
+Good knowledge base indicators:
+- ✅ Agents provide accurate answers
+- ✅ Users find helpful information
+- ✅ Few "I don't know" responses
+- ✅ Consistent procedures
+- ✅ Up-to-date information
+
+Poor knowledge base indicators:
+- ❌ Agents struggle to answer questions
+- ❌ Users can't find information
+- ❌ Conflicting procedures documented
+- ❌ Outdated information causing errors
+- ❌ Gaps in coverage
+
+## Improving RAG Performance
+
+**If AI doesn't find answers:**
+- Add missing documents
+- Improve document titles and tags
+- Break large documents into sections
+- Add more examples
+
+**If AI gives wrong answers:**
+- Review and update procedures
+- Remove conflicting documents
+- Clarify ambiguous instructions
+- Add context to procedures
+
+---
+
+## Next Steps
+
+- [Chat Assistant](/ai/chat-assistant)
+- [Agent Management](/admin/agent-management)

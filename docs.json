@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Intelligate Platform Documentation",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -11,58 +11,111 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Platform Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Overview",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "platform/platform-overview",
+              "platform/key-features",
+              "platform/use-cases"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Getting Started",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "platform/quickstart",
+              "platform/user-roles-workflows",
+              "platform/first-week-guide"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Core Workflows",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "platform/claim-lifecycle"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Analytics & Insights",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "platform/dashboard-overview",
+              "platform/reports",
+              "platform/advanced-analytics"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "platform/user-management",
+              "platform/organization-configuration",
+              "platform/business-rules-automation"
+            ]
+          },
+          {
+            "group": "Security & Compliance",
+            "pages": [
+              "platform/access-control",
+              "platform/data-security",
+              "platform/sso-keycloak-setup"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "AI Layer",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "AI Agents & Intelligence",
             "pages": [
-              "api-reference/introduction"
+              "ai/ai-agents-overview",
+              "ai/automatic-classification",
+              "ai/agent-configuration",
+              "ai/agent-use-cases",
+              "ai/rag-knowledge-base",
+              "ai/chat-assistant"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Admin Console",
+        "groups": [
+          {
+            "group": "Setup & Configuration",
+            "pages": [
+              "admin/initial-setup",
+              "admin/department-management",
+              "admin/category-customization"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Policies & Rules",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "admin/sla-policies",
+              "admin/escalation-rules",
+              "admin/automation-workflows"
+            ]
+          },
+          {
+            "group": "AI Configuration",
+            "pages": [
+              "admin/ai-system-setup",
+              "admin/agent-management",
+              "admin/knowledge-base-admin"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Troubleshooting & FAQ",
+            "pages": [
+              "reference/faq",
+              "reference/troubleshooting",
+              "reference/glossary"
             ]
           }
         ]
@@ -71,14 +124,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+          "href": "mailto:support@intelligate.com",
+          "icon": "envelope"
         }
       ]
     }
@@ -91,13 +139,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@intelligate.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Back to Platform",
+      "href": "https://intelligate.com"
     }
   },
   "contextual": {
@@ -114,9 +162,7 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/intelligate"
     }
   }
 }

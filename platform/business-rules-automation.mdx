@@ -1,0 +1,97 @@
+---
+title: "Business Rules & Automation"
+description: "Automate workflows and claim routing"
+---
+
+## Business Rules Overview
+
+Create rules to automatically handle claims according to your business logic.
+
+### Common Rules
+
+**Auto-Routing:**
+- If category = Quality → Route to Quality dept
+- If priority = Critical → Auto-assign to manager
+- If department = Maintenance → Route to specialized team
+
+**Escalation:**
+- If open > 2 hours and not assigned → Escalate
+- If high priority not assigned in 4 hours → Notify manager
+- If overdue → Alert director
+
+**Notification:**
+- If critical → Email entire department
+- If safety → @mention safety officer
+- If escalated → Copy executive
+
+### Creating a Rule
+
+1. **Name**: "Auto-route Quality Claims"
+2. **Trigger**: If category = "Quality"
+3. **Actions**: 
+   - Route to Quality department
+   - Assign to John (quality lead)
+   - Send notification
+4. **Save & Test**
+
+### Rule Management
+
+- **Enable/Disable**: Turn rules on/off
+- **Priority**: Rules execute in order
+- **Test**: Run against sample claims
+- **Monitor**: See which claims triggered rule
+- **Adjust**: Update based on results
+
+---
+
+## Use Cases
+
+### Situation: Too many unassigned claims
+
+**Rule:**
+- Trigger: Claim open > 1 hour and not assigned
+- Action: Auto-assign to next available person in department
+
+### Situation: Critical claims need immediate attention
+
+**Rule:**
+- Trigger: Priority = Critical
+- Action: 
+  - Email manager
+  - @mention director
+  - Add to dashboard red alert
+
+### Situation: Specific categories always escalate
+
+**Rule:**
+- Trigger: Category = "Safety" and priority = "High"
+- Action: Auto-escalate to executive + notify compliance
+
+---
+
+## Testing Rules
+
+Before deployment:
+1. Create sample claim
+2. Run rule
+3. Verify correct action taken
+4. Check notifications received
+5. Monitor for false positives
+
+---
+
+## Best Practices
+
+- Start with simple rules
+- Test thoroughly before enabling
+- Monitor impact
+- Adjust based on results
+- Document all rules
+- Review quarterly
+
+---
+
+## Next Steps
+
+- [Organization Configuration](/platform/organization-configuration)
+- [Admin Console](/admin/initial-setup)

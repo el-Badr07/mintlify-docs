@@ -1,0 +1,134 @@
+---
+title: "Automatic Classification"
+description: "How AI classifies and prioritizes claims"
+---
+
+## How AI Classifies Claims
+
+Every claim is automatically analyzed and classified. You can review and override classifications.
+
+## What Gets Classified
+
+- **Category**: Quality, Safety, Logistics, Maintenance, Other
+- **Priority**: Critical, High, Medium, Low
+- **Root Cause**: From 9 possible causes
+- **Sentiment**: Positive, Neutral, Negative
+
+## Classification Process
+
+1. **Input Processing**:
+   - If text: Analyze directly
+   - If voice: Transcribe first, then analyze
+   - If image: Extract text via OCR, then analyze
+
+2. **Analysis**:
+   - Identify keywords and patterns
+   - Match against historical data
+   - Consider context and urgency
+   - Predict likely causes
+
+3. **Scoring**:
+   - Calculate confidence level (0-100%)
+   - Identify similar past claims
+   - Rank possible categories
+   - Assign most likely classification
+
+4. **Presentation**:
+   - Show AI suggestion
+   - Display confidence score
+   - Show alternative options
+   - Allow user override
+
+## Confidence Scoring
+
+**90-100%**: Very confident, usually correct
+- Example: "Chemical spill" → Safety, Critical, 98%
+
+**70-90%**: Confident but verify
+- Example: "Equipment noise" → Maintenance, High, 82%
+
+**50-70%**: Uncertain, review carefully
+- Example: "Strange behavior" → Could be multiple categories
+
+**<50%**: Very uncertain, likely needs manual review
+- Example: Ambiguous description → Unknown category, 35%
+
+## Using AI Classifications
+
+### Accept Classification
+- Click ✓ to accept
+- Claim created with AI suggestion
+- System learns from acceptance
+
+### Override Classification
+- Click to change category/priority
+- Select correct classification
+- Your correction trains AI
+- Next time, AI more likely to get it right
+
+### Provide Feedback
+- Is classification reasonable? (like/dislike)
+- User feedback improves AI
+- High dislike rate triggers review
+
+## Improving Classifications
+
+### Feedback Loop
+Each override helps train AI:
+- User sees wrong classification
+- Corrects it
+- AI learns pattern
+- Future similar claims classified better
+
+### Pattern Recognition
+AI identifies patterns:
+- "Conveyor" + keywords → Maintenance
+- "Injured" + urgency → Safety
+- "Delivery" + status → Logistics
+
+### Historical Learning
+AI improves by seeing:
+- What was classified before
+- How it was resolved
+- Patterns in resolutions
+- Seasonal trends
+
+## Common Classification Mistakes
+
+### Too Many "Critical" Classifications
+
+**Problem**: AI classifies too many claims as Critical
+**Solution**: Adjust confidence threshold higher or review AI keywords for "urgent"
+
+### Missing Safety Issues
+
+**Problem**: Safety claims classified as Quality
+**Solution**: Add safety keywords to knowledge base or adjust system prompt
+
+### Wrong Department Routing
+
+**Problem**: Maintenance claims routing to Quality
+**Solution**: Review category-to-department mapping
+
+## AI Confidence for Different Inputs
+
+**Text claims**: Usually 75-90% confidence
+- Clear descriptions: Higher confidence
+- Vague descriptions: Lower confidence
+
+**Voice claims**: Usually 70-85% confidence
+- Clear speech: Better confidence
+- Background noise: Lower confidence
+- Accents: Varies by model
+
+**Image claims**: Usually 60-80% confidence
+- Clear images: Better confidence
+- Blurry images: Lower confidence
+- Requires context text
+
+---
+
+## Next Steps
+
+- [Agent Configuration](/ai/agent-configuration)
+- [Chat Assistant](/ai/chat-assistant)

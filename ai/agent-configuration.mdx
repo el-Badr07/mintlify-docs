@@ -1,0 +1,193 @@
+---
+title: "Agent Configuration"
+description: "Set up AI agents for your teams"
+---
+
+## What Are AI Agents?
+
+Agents are specialized AI assistants configured for specific purposes. Each agent has:
+- Specific role (Quality Assistant, Safety Expert, etc.)
+- System instructions (personality and behavior)
+- Available tools (what it can do)
+- Knowledge base (documents to reference)
+- Permitted data access (what it can see)
+
+## When to Use Agents
+
+### Single Agent Approach
+- Small team or startup
+- One agent handles all inquiries
+- General purpose assistant
+
+### Multi-Agent Approach
+- Large manufacturing facility
+- Specialized teams per department
+- Complex processes
+- Significant document library
+
+## Step-by-Step Agent Creation
+
+### Step 1: Define Purpose
+
+**Question**: What will this agent help with?
+
+Examples:
+- "Quality defect classification and root cause analysis"
+- "Safety incident response and escalation"
+- "Maintenance troubleshooting and scheduling"
+
+### Step 2: Write System Prompt
+
+Instructions for agent behavior:
+
+Example Quality Agent:
+```
+You are a Quality Control Expert. Your job is to:
+- Help classify quality defects
+- Suggest root causes
+- Recommend quality improvements
+- Reference industry standards
+- Escalate safety concerns
+- Use data-driven decisions
+Be professional, direct, and action-oriented.
+```
+
+### Step 3: Select LLM Provider
+
+Choose model based on needs:
+- **OpenRouter**: General classification
+- **Groq**: Audio processing
+- **OpenAI**: Complex analysis
+
+### Step 4: Configure Tools
+
+Select what agent can access:
+
+Available tools:
+- Search claims with filters
+- Get full claim details
+- View analytics/KPIs
+- Check SLA status
+- Access knowledge base
+- Query team workload
+- Generate reports
+
+### Step 5: Link Knowledge Base
+
+Attach documents agent should reference:
+- Quality control procedures
+- Equipment manuals
+- Historical resolutions
+- Best practices
+- Training materials
+
+### Step 6: Set Data Access
+
+Control what agent can see:
+- All claims vs. department only
+- Historical data depth
+- Sensitive information
+- User permissions
+
+### Step 7: Test Agent
+
+Ask sample questions:
+- "What causes conveyor belt misalignment?"
+- "Show me quality issues from last week"
+- "What's our SLA compliance rate?"
+- "How many critical claims unassigned?"
+
+Verify:
+- Answers are accurate
+- Tone is appropriate
+- References are helpful
+- No hallucinations
+
+### Step 8: Deploy
+
+Enable for team to use via chat interface.
+
+## Agent Examples
+
+### Quality Defect Assistant
+
+**Purpose**: Help quality team
+**System Prompt**: "Focus on defects, root causes, prevention"
+**Tools**: Search claims, analytics, knowledge base
+**Knowledge Base**: Quality procedures, defect types, solutions
+**Access**: Quality department claims only
+
+### Safety Incident Responder
+
+**Purpose**: Support safety incidents
+**System Prompt**: "Treat as urgent, escalate appropriately, focus on prevention"
+**Tools**: Search claims, escalation, notifications
+**Knowledge Base**: Safety procedures, OSHA regulations, response playbooks
+**Access**: All claims (some sensitive)
+
+### Maintenance Specialist
+
+**Purpose**: Equipment troubleshooting
+**System Prompt**: "Provide step-by-step solutions, reference equipment manuals"
+**Tools**: Search claims, get details, view workload
+**Knowledge Base**: Equipment specs, maintenance schedules, past repairs
+**Access**: Maintenance claims + historical records
+
+### Executive Summary Agent
+
+**Purpose**: Quick metrics for leadership
+**System Prompt**: "Provide concise summaries, focus on trends and decisions"
+**Tools**: Full analytics access
+**Knowledge Base**: Company goals, KPI definitions
+**Access**: All data (aggregate level)
+
+## Managing Agents
+
+### Enable/Disable
+- Start with disabled
+- Enable after testing
+- Disable if not used
+- Can toggle anytime
+
+### Monitor Usage
+- How often called
+- Average response time
+- User satisfaction
+- Common queries
+
+### Update Agents
+- Refine system prompt based on feedback
+- Add new tools or knowledge
+- Change LLM provider if needed
+- Archive if unused
+
+### Remove Agents
+- Delete when no longer needed
+- Archive for reference
+- Export interactions if needed
+
+## Best Practices
+
+✅ **Do**:
+- Start with clear, specific purpose
+- Use professional system prompt
+- Thoroughly test before deploying
+- Link to good knowledge base
+- Monitor usage and adjust
+- Gather user feedback
+- Update documentation regularly
+
+❌ **Don't**:
+- Create too many agents (causes confusion)
+- Make agents too generic
+- Deploy without testing
+- Forget to update knowledge base
+- Ignore user feedback
+- Leave unused agents enabled
+
+---
+
+## Next Steps
+
+- [Agent Use Cases](/ai/agent-use-cases)
+- [RAG Knowledge Base](/ai/rag-knowledge-base)

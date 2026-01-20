@@ -1,0 +1,672 @@
+---
+title: "Claim Lifecycle"
+description: "Complete workflow: Creating, managing, collaborating, and resolving claims"
+---
+
+## Overview
+
+This guide covers the entire lifecycle of a claim from creation through resolution. A single comprehensive document covering how to create claims, manage them, collaborate with teammates, track SLA status, and view progress through multiple visualization options.
+
+---
+
+## Part 1: Creating Claims
+
+### Text Claims
+
+**Best for**: Detailed descriptions, desk-based reporting, complex situations
+
+**Step-by-step:**
+1. **Click "New Claim"** → Select **"Text"**
+2. **Enter claim details**:
+   - **Title**: Brief summary (e.g., "Assembly line conveyor misalignment")
+   - **Description**: Detailed explanation with context
+   - **Category**: Quality, Safety, Logistics, Maintenance, or custom
+   - **Department**: Which department should handle this
+   - **Attach files** (optional): Upload supporting documents
+3. **Submit**
+
+**What happens automatically:**
+- Intelligate analyzes text and predicts category (AI may override your selection)
+- Priority assigned (Low, Medium, High, Critical)
+- Sent to appropriate department
+- You see the claim on dashboard immediately
+
+**Tips for better AI classification:**
+- Use specific, clear language
+- Include relevant details (what, where, when)
+- Mention if issue is recurring
+- Note any safety concerns in description
+- List any affected equipment or people
+
+### Voice Claims
+
+**Best for**: On-site quick capture, hands-free reporting, time-sensitive issues
+
+**Step-by-step:**
+1. **Click "New Claim"** → Select **"Voice"**
+2. **Click microphone icon** and start recording
+3. **Speak clearly** for 15-60 seconds:
+   - Describe what you see/experienced
+   - What's affected or who's involved
+   - Any immediate actions taken
+   - Example: "Found water leak near Circuit Panel 3 on Line 4, shut off power, area marked unsafe"
+4. **Stop recording** when done
+5. **Groq Whisper transcribes** automatically (usually within seconds)
+6. **Review transcription**:
+   - Is it accurate? If not, edit text
+   - Add additional context if needed
+7. **Select category** (or accept AI suggestion)
+8. **Submit**
+
+**What happens:**
+- Your voice automatically converted to text
+- Text analyzed for category and priority
+- Transcription sometimes needs minor edits (background noise, accents)
+- Claim created with full audio and transcription
+
+**Tips for better voice capture:**
+- Speak clearly without rush
+- Use production floor language (team will understand)
+- Include "where" information
+- Mention time sensitivity
+- Note if immediate action needed
+
+**Technical details:**
+- Uses Groq Whisper Large V3 Turbo
+- Supports noisy environments
+- Best with 15-60 second recordings
+- Multiple languages supported (trained on your usage)
+
+### Image Claims
+
+**Best for**: Visual defects, equipment damage, quality issues, screenshots
+
+**Step-by-step:**
+1. **Click "New Claim"** → Select **"Image"**
+2. **Upload photo** (from camera or file)
+   - Take clear photo of issue
+   - Include context (show full defect)
+   - Good lighting helps accuracy
+   - Can upload multiple images
+3. **GPT-4 Vision extracts text** automatically:
+   - Reads any text visible in image
+   - Identifies visual defects
+   - Attempts to extract relevant information
+4. **Review extracted text** and make adjustments:
+   - Edit if OCR missed something
+   - Add description of what you see
+   - Note location and impact
+5. **Select category** (or accept AI suggestion)
+6. **Submit**
+
+**What happens:**
+- Image analyzed for defects and text content
+- Extracted information fed to AI for classification
+- Original image stored for reference
+- Claim created with image attached
+
+**Tips for better image capture:**
+- Take photo straight-on when possible
+- Include scale reference (hand, ruler)
+- Capture full defect in frame
+- Ensure good lighting
+- Note specific area if large image
+- Take multiple photos from different angles
+
+**Technical details:**
+- Uses GPT-4 Vision for image analysis
+- Extracts text via OCR
+- Identifies visual patterns
+- Works with PNG, JPG, WebP formats
+- Max 10MB per image
+
+### AI Auto-Classification
+
+After submitting any claim type, Intelligate automatically processes it:
+
+**Classification includes:**
+- **Category**: Quality, Safety, Logistics, Maintenance, Other
+- **Priority**: Low, Medium, High, Critical
+- **Root Cause Prediction**: Suggests likely causes (9 categories)
+- **Confidence Score**: How certain the AI is (0-100%)
+- **Sentiment**: Positive, Neutral, Negative (hints urgency)
+
+**How to use classification:**
+- **Review the AI suggestions** on claim detail page
+- **Override if wrong**: Click to change category or priority
+- **Note confidence**: Low confidence (<70%) may need review
+- **Your correction trains AI**: Each override improves future predictions
+- **Track patterns**: High override rate on a category suggests misconfiguration
+
+### Multimodal Example
+
+**Scenario**: Production line issue needs thorough documentation
+
+1. **Start with voice** while on line: "Saw unusual noise from hydraulic pump, coming from Port side"
+2. **Add image** of the pump location
+3. **Add text** with additional context: "Noise started 2 hours ago, hydraulic pressure reading: 340 bar (normal 300-320)"
+4. **Intelligate processes all input**:
+   - Transcribes voice (gets location and symptom)
+   - Analyzes image (confirms location)
+   - Reads text details (provides diagnostic info)
+   - Combines all for classification
+5. **Result**: Highly accurate "Maintenance - Hydraulic System" classification with "High" priority
+
+---
+
+## Part 2: Claim Management
+
+### Viewing Claim Details
+
+**Full claim view shows:**
+- Title and description
+- Category and priority badges
+- Current status (OPEN, IN_PROGRESS, RESOLVED, CLOSED)
+- SLA deadline and status (On-time, At-risk, Overdue)
+- Assigned team member
+- Created by and date
+- All attachments and evidence
+- Complete activity log
+
+**Visual indicators:**
+- 🔴 **Red** = Critical priority, Overdue SLA
+- 🟠 **Orange/Yellow** = High priority, At-risk SLA
+- 🟡 **Yellow** = Medium priority, On-time
+- 🟢 **Green** = Low priority, On-time
+
+### Assigning Claims
+
+**Assigning to team member:**
+1. **Open claim** detail view
+2. **Click "Assign to"** section
+3. **Select team member** from list
+4. **Selected member gets notification** immediately
+5. **Status updates** on claim: "Assigned to John"
+
+**Auto-assignment:**
+- Business rules can auto-assign based on criteria
+- Example: "If category = Quality, auto-assign to John"
+- Example: "If priority = Critical, auto-assign to manager"
+
+**Re-assigning:**
+- Can reassign anytime if person is overwhelmed
+- Original assignee gets notification
+- New assignee notified
+- Activity log tracks all assignments
+
+### Status Workflow
+
+Claims move through four statuses:
+
+**OPEN** (New, awaiting attention)
+- Default state when created
+- Not yet assigned or just assigned
+- Next step: Assign to someone or start working
+
+**IN_PROGRESS** (Being worked on)
+- Someone is actively solving the issue
+- Click status → "Start Work" to move here
+- Shows team is engaged
+- Next step: Resolve the issue
+
+**RESOLVED** (Solution found, pending verification)
+- Issue is fixed or solution determined
+- Click status → "Mark Resolved"
+- Add resolution notes explaining what was done
+- Customer/manager reviews
+- Next step: Close or reopen if unsatisfactory
+
+**CLOSED** (Resolved and verified)
+- Issue completely handled
+- Cannot reopen (creates new claim if issue returns)
+- Stored in history for learning
+- Final step: Complete workflow
+
+**Status transition example:**
+```
+OPEN (just created)
+  ↓
+(assign to John)
+  ↓
+IN_PROGRESS (John starts work)
+  ↓
+(John fixes issue)
+  ↓
+RESOLVED (solution documented)
+  ↓
+(manager verifies)
+  ↓
+CLOSED (workflow complete)
+```
+
+### Adding Context & Notes
+
+**Update claim with progress:**
+1. Click claim detail
+2. Find "Update Status" or "Add Note" section
+3. Type message: "Checked hydraulic pressure, normal. Testing valve response."
+4. Updates status while keeping context
+5. Status note appears in activity log
+
+**Multiple updates:**
+- Keep adding updates as progress happens
+- Each update has timestamp
+- Shows complete progress trail
+- Team can follow what's being done
+
+---
+
+## Part 3: Real-Time Collaboration
+
+### Comments & Conversations
+
+**Adding a comment:**
+1. **Scroll to "Comments"** section
+2. **Type in comment box**:
+   - Share findings: "Traced issue to faulty sensor"
+   - Ask questions: "Can you check the power supply?"
+   - Provide guidance: "Follow safety procedure 4.2 before accessing"
+3. **@mention** to notify specific people:
+   - Type `@John` in comment
+   - John gets instant notification
+   - Comment highlighted for him
+4. **Attach files**:
+   - Upload supporting docs
+   - Embed images
+   - Link procedures
+5. **Submit comment**
+   - Appears immediately
+   - Notifications sent to mentioned people
+
+**Comment threads:**
+- Comments appear in chronological order
+- Indented replies create threads
+- Easy to follow conversation
+- Full history never deleted
+
+**Example conversation:**
+```
+Manager: "This looks like a repeat from March. Can you check history?"
+  ↳ John: "Checked - yes, same sensor failed before. Ordering replacement."
+  ↳ Manager: "@Maintenance team, this is urgent. Reply when you get part?"
+  ↳ Maintenance Lead: "Part arriving tomorrow. Temporary sensor installed for overnight."
+Manager: "Good. Let's prevent this happening again @Operations"
+```
+
+### Reactions & Quick Feedback
+
+**React to comments:**
+1. **Hover over comment**
+2. **Click emoji icon**
+3. **Select emoji**: 👍 ✅ ❤️ 🚀 etc.
+4. **Shows at comment** for quick visual feedback
+
+**Use cases:**
+- 👍 = "Got it, sounds good"
+- ✅ = "Confirmed, all good"
+- ❤️ = "Thanks for help"
+- 🚀 = "Great work, let's ship"
+- 🔥 = "Urgent attention needed"
+
+### @Mentions & Notifications
+
+**Notifying specific people:**
+- **@Manager**: "This needs executive decision"
+- **@John**: "Can you handle this or should I?"
+- **@Facility-B**: "@Facility-B team, similar issue at your location?"
+
+**Who gets notified:**
+- Mentioned person: Direct notification
+- Claim owner: Sees comment was added
+- Assigned person: Sees new comment
+- Followers: Anyone monitoring claim
+
+**Notification channels:**
+- In-app notification (real-time bell icon)
+- Email (if configured)
+- Dashboard alert (shows new activity)
+
+### File Attachments
+
+**Uploading supporting evidence:**
+1. **Click "Add File"** in comments or claim detail
+2. **Upload** image, document, PDF, etc.
+3. **Files appear** in claim for reference
+4. **Downloadable** by any team member
+5. **Stored permanently** with claim
+
+**Use cases:**
+- Defect photos from multiple angles
+- Maintenance manuals for troubleshooting
+- Test results and measurements
+- Vendor documentation
+- Before/after pictures
+
+---
+
+## Part 4: SLA & Deadline Management
+
+### Understanding SLA
+
+**SLA = Service Level Agreement** = Deadline to handle claim
+
+**Example SLA Policy:**
+| Priority | Response Time | Resolution Time |
+|----------|-----------------|-----------------|
+| Critical | 4 hours | 8 hours |
+| High | 8 hours | 24 hours |
+| Medium | 24 hours | 72 hours |
+| Low | 48 hours | 1 week |
+
+**What this means:**
+- **Response Time**: Must acknowledge/assign within deadline
+- **Resolution Time**: Must fully resolve within deadline
+- **SLA Period**: Starts when claim created
+- **Excludes**: Weekends/holidays (if configured)
+
+### SLA Status Indicators
+
+**On-Time** (🟢 Green)
+- Claim is being handled within deadline
+- Plenty of time remaining
+- Status: "On Track"
+- No action needed
+
+**At-Risk** (🟡 Yellow)
+- Deadline approaching (typically 2 hours remaining)
+- Should prioritize this claim
+- Time to take action before overdue
+- Status: "Escalation Recommended"
+
+**Overdue** (🔴 Red)
+- Deadline has passed
+- Immediate action needed
+- May affect compliance metrics
+- Status: "Breach - Requires Escalation"
+
+### Deadline Calculation
+
+**System automatically calculates:**
+1. **Claim created**: March 15, 10:00 AM
+2. **Priority assigned**: "High"
+3. **SLA looked up**: High = 24 hour resolution
+4. **Deadline set**: March 16, 10:00 AM
+5. **Status monitored**: At-Risk at March 15, 8:00 PM (2 hours before)
+6. **Alert sent**: "@Manager claim overdue" at March 16, 10:01 AM
+
+**Customization:**
+- SLA varies by category
+- Example: Safety claims may have 4-hour SLA vs Quality 24-hour
+- Can exclude weekends
+- Can have custom rules per department
+
+### Managing At-Risk Claims
+
+**When you see yellow warning:**
+
+1. **Assess status**: Is actual work happening?
+2. **Communicate**: Add comment checking progress
+3. **Support**: Offer help if person is stuck
+4. **Escalate**: Move to someone with more availability
+5. **Options**:
+   - Add extra resources
+   - Split into multiple claims
+   - Escalate to manager for priority
+   - Request external support
+
+**Example intervention:**
+```
+Dashboard shows claim at-risk
+  ↓
+Manager clicks claim
+  ↓
+Sees John assigned, status still "OPEN"
+  ↓
+Adds comment: "@John Heads up this is at-risk. Need help?"
+  ↓
+John responds: "Yes, need access to Line 3"
+  ↓
+Manager: "I'll arrange access. Switch to IN_PROGRESS while waiting."
+  ↓
+John: "Done. Will start at 2 PM"
+  ↓
+Status updated, on track now
+```
+
+### SLA Compliance Metrics
+
+**Dashboard shows:**
+- **Organization SLA Compliance**: % of all claims resolved on time
+- **Department SLA Compliance**: By department (Quality, Maintenance, etc.)
+- **Category SLA Compliance**: By claim type
+- **Individual SLA Performance**: By team member
+- **Trend Analysis**: Is compliance improving or declining?
+
+**Interpreting metrics:**
+- 95%+ compliance: Excellent process
+- 85-95% compliance: Good, monitor trends
+- 75-85% compliance: Needs improvement
+- <75% compliance: Critical issues, investigate
+
+---
+
+## Part 5: Visualization Options
+
+### Kanban Board View
+
+**Visual status management with drag-and-drop**
+
+**Layout:**
+```
+┌─────────────┬──────────────┬────────────┬────────────┐
+│    OPEN     │ IN_PROGRESS  │ RESOLVED   │   CLOSED   │
+├─────────────┼──────────────┼────────────┼────────────┤
+│ Claim #1    │ Claim #5     │ Claim #8   │ Claim #12  │
+│ Priority    │ Priority     │ Priority   │ Priority   │
+│ (Drag me→)  │ (Drag me→)   │ (Drag me→) │            │
+│             │              │            │ Claim #15  │
+│ Claim #3    │ Claim #6     │ Claim #9   │ (archived) │
+│ Priority    │ Priority     │ Priority   │            │
+│             │              │            │ Claim #20  │
+│             │              │            │ (archived) │
+└─────────────┴──────────────┴────────────┴────────────┘
+```
+
+**Using Kanban:**
+1. **View at a glance**: See all claims by status
+2. **Drag to update**: Drag claim to new column to change status
+3. **Quick edit**: Click claim card to see/edit details
+4. **Filter options**:
+   - Show only my department
+   - Show only High/Critical priority
+   - Show only assigned to me
+   - Hide completed claims
+5. **Mobile friendly**: Works on tablets and phones
+
+**Example workflow:**
+```
+New claim arrives → Appears in OPEN column
+                 ↓
+Manager drags to IN_PROGRESS → Assignee notified
+                             ↓
+Person clicks card, marks "Resolved" → Moves to RESOLVED
+                                      ↓
+Manager verifies → Drags to CLOSED → Workflow complete
+```
+
+### Calendar View
+
+**Timeline-based SLA visualization**
+
+**Useful for:**
+- Seeing which claims have upcoming deadlines
+- Identifying bottlenecks by date
+- Planning workload distribution
+- Spotting repeating patterns
+- Scheduling resources
+
+**Calendar shows:**
+- Each claim as a block
+- Color-coded by priority (red=critical, yellow=high, etc.)
+- SLA deadline indicated
+- At-risk and overdue flagged
+- Grouped by date
+
+**Using Calendar:**
+1. **Quick overview**: See deadlines at a glance
+2. **Plan week**: What claims are due Friday?
+3. **Identify peaks**: Which days have most claims?
+4. **Schedule resources**: Hire/reassign based on patterns
+5. **Prevent bottlenecks**: Distribute workload evenly
+
+### Timeline View
+
+**Sequential activity tracking**
+
+**Shows:**
+- Every state change and when it happened
+- Who made each change
+- Comments and updates in order
+- Complete claim history
+- Audit trail
+
+**Reading timeline:**
+```
+10:00 AM - Claim created by John
+          Status: OPEN
+          Category: Quality (AI assigned)
+
+11:30 AM - Assigned to Sarah by Manager
+          Status: OPEN → assigned
+
+02:00 PM - Status updated to IN_PROGRESS
+          Sarah added comment: "Investigating line 3"
+
+04:15 PM - Comment: "Root cause found: sensor calibration"
+          File attached: Sensor_logs.pdf
+
+05:00 PM - Status: IN_PROGRESS → RESOLVED
+          Comment: "Recalibrated sensor, testing now"
+
+Next day 09:00 AM - Status: RESOLVED → CLOSED
+                    Comment: "Tests passed. Issue solved."
+                    Manager verified.
+```
+
+**Use cases:**
+- **Auditing**: Show compliance exactly what happened
+- **Learning**: See how past similar issues were solved
+- **Accountability**: Clear trail of who did what
+- **Troubleshooting**: Replay exact sequence of events
+
+---
+
+## Part 6: Complete Workflow Example
+
+### Real Manufacturing Scenario
+
+**The situation**: Equipment breakdown on production line
+
+**10:15 AM - Employee Reports**
+- Employee on floor notices conveyor belt slowing down
+- Uses phone to create **voice claim**: "Conveyor belt slowing down, production impact, need urgent fix"
+- Groq transcribes voice
+- Intelligate classifies: "Maintenance" category, "Critical" priority
+- Claim created #42857
+
+**10:17 AM - Manager Notified**
+- Manager gets notification: "Critical maintenance claim"
+- Views dashboard, sees claim at top (Critical priority)
+- Opens claim to get details
+- Immediately assigns to **David** (lead maintenance tech)
+- Adds comment: "@David Conveyor belt slowing. This is blocking production."
+
+**10:20 AM - Maintenance Tech Starts**
+- David gets notification of assignment
+- Opens Intelligate on maintenance tablet
+- Reads comment from manager
+- Changes status: OPEN → IN_PROGRESS
+- Walks to conveyor and starts diagnosis
+
+**10:45 AM - Diagnosis Complete**
+- David adds comment: "Found loose belt tension. Parts on order."
+- Attaches photo of loose belt
+- Notes: "Need 2-3 hours for delivery + installation"
+
+**10:47 AM - Manager Takes Action**
+- Manager sees comment, checks SLA deadline (12:15 PM for critical)
+- Realizes we'll miss deadline if just waiting for parts
+- Calls David: Can we temporary bypass?
+- David: "Yes, can run reduced speed but no quality guarantee"
+- Manager: Contacts quality to get approval
+- Posts comment: "@Quality Awaiting bypass approval for 2 hours"
+
+**11:00 AM - Quality Approves**
+- Quality manager adds comment: "Approved. Run reduced speed until belt arrives."
+- David implements temporary fix
+- Updates status: IN_PROGRESS with note "Running reduced speed, belt arriving 1 PM"
+
+**1:15 PM - Permanent Fix**
+- Belt arrives earlier than expected
+- David installs new belt
+- Tests at full speed
+- Adds comment: "Belt replaced and tested. Full speed confirmed."
+- Changes status: IN_PROGRESS → RESOLVED
+
+**1:20 PM - Manager Verifies**
+- Manager gets notification of resolution
+- Reviews comments and status
+- Production confirms conveyor working normally
+- Changes status: RESOLVED → CLOSED
+- Adds note: "Resolved - production back to normal"
+
+**Workflow complete**: 3 hours from report to resolution
+- ✅ SLA met (critical deadline 12:15, closed by 1:20)
+- ✅ Cross-functional collaboration (Maintenance + Quality + Management)
+- ✅ Transparency (all updates visible)
+- ✅ Learning (full audit trail for process improvement)
+
+---
+
+## Best Practices
+
+### Creating Effective Claims
+- ✅ Be specific and clear
+- ✅ Include location and timing
+- ✅ Add evidence (photos, measurements)
+- ✅ Note impact (safety, production, cost)
+- ❌ Don't write vague descriptions
+- ❌ Don't hide important details
+
+### Collaborating Effectively
+- ✅ Respond to comments promptly
+- ✅ Use @mentions appropriately
+- ✅ Provide updates as work progresses
+- ✅ Ask for help when stuck
+- ❌ Don't wait until deadline to communicate
+- ❌ Don't ignore notifications
+
+### Meeting SLA
+- ✅ Respond immediately to assignments
+- ✅ Update status as you work
+- ✅ Escalate early if you'll miss deadline
+- ✅ Communicate blockers
+- ❌ Don't wait until overdue to escalate
+- ❌ Don't leave claims unassigned
+
+### Documentation & Learning
+- ✅ Document complete solution in comments
+- ✅ Attach relevant reference materials
+- ✅ Note lessons learned
+- ✅ Link to similar past claims
+- ❌ Don't close without documenting solution
+- ❌ Don't hide what went wrong
+
+---
+
+## Next Steps
+
+- [Dashboard Overview](/platform/dashboard-overview) - Analyze metrics
+- [Business Rules](/platform/business-rules-automation) - Automate workflows
+- [User Management](/platform/user-management) - Manage teams
+- [SLA Policies](/admin/sla-policies) - Configure deadlines

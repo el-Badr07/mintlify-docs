@@ -1,0 +1,191 @@
+---
+title: "Agent Use Cases"
+description: "Real-world examples of AI agents in action"
+---
+
+## Quality Defect Assistant
+
+### Use Case: Product Defect Analysis
+
+**Scenario**: Production finds batch of defective units
+
+**User Query**: "We have 23 units with cracks in corner. Is this a known issue?"
+
+**Agent Response**:
+1. Searches knowledge base for "corner cracks"
+2. Finds 3 past occurrences
+3. Reviews root causes (mold issue, temperature)
+4. Provides: "This matches defects from March (cause: mold temp too low) and July (cause: pressure too high)"
+5. Suggests: "Check mold temperature setting immediately"
+6. Recommends: "Create preventive maintenance task for mold calibration"
+
+**Result**: Issue identified and solved in 5 minutes instead of hours
+
+---
+
+## Safety Incident Responder
+
+### Use Case: On-Site Injury
+
+**Scenario**: Minor injury in warehouse
+
+**User Query**: "Employee cut hand on machinery. What's the procedure?"
+
+**Agent Response**:
+1. Automatically escalates to Safety Manager
+2. Retrieves safety procedures
+3. Provides:
+   - First aid instructions
+   - Incident report steps
+   - Notification requirements
+   - OSHA documentation needs
+4. Creates incident claim (Critical)
+5. Notifies executive (auto-escalation)
+
+**Result**: Proper protocol followed, compliance documented, leadership notified
+
+---
+
+## Maintenance Specialist
+
+### Use Case: Equipment Troubleshooting
+
+**Scenario**: Production line down, technician needs help
+
+**Technician Query**: "Hydraulic pump making noise and pressure dropping. What do I do?"
+
+**Agent Response**:
+1. Searches past maintenance records
+2. Finds similar issues (3 times in past year)
+3. Provides step-by-step:
+   - Check pressure gauge (if <300 bar, likely internal leak)
+   - Inspect hose connections (leaks)
+   - Listen to pump (bearing wear sound)
+   - Check oil level (low = air in system)
+4. References equipment manual
+5. Suggests part numbers if replacement needed
+6. Provides: "Had same issue Feb 2024, replaced seal kit #42857"
+
+**Result**: Technician fixes problem in 30 minutes with guided help
+
+---
+
+## Logistics Support Agent
+
+### Use Case: Supplier Delay Investigation
+
+**Scenario**: Shipment delayed, impacting production
+
+**Logistics Query**: "XYZ Supplier hasn't shipped order #54321. What's our history with them?"
+
+**Agent Response**:
+1. Searches past logistics claims
+2. Finds 5 past delays from XYZ Supplier
+3. Analyzes patterns:
+   - 4 delays in last 6 months
+   - Average delay: 3 days
+   - Root cause: "Supplier capacity issues"
+4. References: "Used alternate supplier ABC before, worked well"
+5. Recommends:
+   - Call XYZ for status
+   - If >24 hour delay, switch to ABC
+   - Consider supplier diversification strategy
+6. Suggests preventive action: "Set up dual-source for this part"
+
+**Result**: Alternative arranged, production continues
+
+---
+
+## Manager Assistant
+
+### Use Case: Daily Standup
+
+**Manager Query**: "Quick summary - what's our status today?"
+
+**Agent Response** (in seconds):
+1. Pulls today's metrics:
+   - 8 new claims (average 10/day)
+   - 12 resolved (on pace)
+   - SLA compliance: 92% (good)
+   - 2 claims at-risk (list them)
+   - No overdue claims
+2. Workload status:
+   - Team average: 4 claims per person (good)
+   - John: 7 claims (needs help?)
+   - Sarah: 2 claims (can take more)
+3. Trends:
+   - Quality claims down 15% (good)
+   - Maintenance claims up 20% (check aging equipment?)
+4. Top issues today:
+   - 1 Safety claim (appropriate escalation)
+   - 2 Maintenance (John handling)
+
+**Result**: Manager has complete picture for standup in 30 seconds
+
+---
+
+## Executive Summary Agent
+
+### Use Case: Weekly Board Report
+
+**Executive Query**: "How did we do this week?"
+
+**Agent Response**:
+1. **Volume**: 47 claims (5% above normal)
+2. **Speed**: Average resolution 18 hours (vs 20 hours normal)
+3. **Compliance**: 91% SLA compliance (target 90%)
+4. **Safety**: 2 safety claims, both resolved
+5. **Trends**: Quality down 12%, maintenance up 8%
+6. **Staffing**: Quality team performing well, Maintenance may need help
+7. **Action items**: Consider additional maintenance hiring
+8. **Recommendation**: "Continue current operations, plan for maintenance expansion"
+
+**Result**: Executive gets strategic insights for board meeting
+
+---
+
+## Common Agent Interactions
+
+### Quick Lookup
+**User**: "Show me all overdue claims"
+**Agent**: Lists immediately with details
+
+### Pattern Analysis
+**User**: "Why are we having so many conveyor belt issues?"
+**Agent**: Analyzes data, finds root cause, suggests prevention
+
+### Escalation Support
+**User**: "This claim is complex, need help deciding what to do"
+**Agent**: Provides context, similar past cases, recommendations
+
+### Training Support
+**User**: "How do I calibrate the hydraulic press?"
+**Agent**: Retrieves procedure, provides step-by-step guidance
+
+### Decision Making
+**User**: "Should we buy replacement equipment or keep repairing?"
+**Agent**: Analyzes repair cost history, failure patterns, recommendations
+
+---
+
+## Agent Effectiveness Metrics
+
+Track per agent:
+- **Usage frequency**: How often called
+- **User satisfaction**: Are responses helpful?
+- **Accuracy**: Are suggestions correct?
+- **Time saved**: How much faster with agent?
+- **Actions taken**: Do users implement suggestions?
+
+Adjust agents based on metrics:
+- Low usage: Agent not solving real problem
+- Low satisfaction: Improve system prompt or knowledge base
+- High accuracy: Keep as is, share best practices
+- High satisfaction: Consider expanding scope
+
+---
+
+## Next Steps
+
+- [RAG Knowledge Base](/ai/rag-knowledge-base)
+- [Chat Assistant](/ai/chat-assistant)

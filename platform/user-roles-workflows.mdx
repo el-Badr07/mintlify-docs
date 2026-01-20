@@ -1,0 +1,379 @@
+---
+title: "User Roles & Workflows"
+description: "Understand role-specific workflows and permissions"
+---
+
+## Role Overview
+
+Intelligate supports three primary roles, each with specific responsibilities and capabilities. Roles are defined in Keycloak and automatically synchronized to Intelligate.
+
+| Aspect | Admin | Manager | Employee |
+|--------|-------|---------|----------|
+| **Can view** | All departments, all claims | Own department claims | Own assigned claims |
+| **Can create** | Claims + users + settings | Claims + business rules | Claims only |
+| **Can assign** | Any claim to any person | Department claims to team | Own claims only |
+| **System access** | Full admin console | Department settings | Claims only |
+| **Typical users** | IT, Operations leaders | Department heads, supervisors | Production floor, all staff |
+
+---
+
+## EMPLOYEE Workflow
+
+**Primary Role**: Daily claim creation and collaboration
+
+### Dashboard View
+Employees see:
+- Claims assigned to them
+- Claims they created
+- Team collaborations
+- Personal workload
+- Dashboard with basic metrics
+
+### Typical Workflow: Report a Quality Issue
+
+**Scenario**: Assembly line worker finds a defect
+
+1. **Employee opens Intelligate** on production floor tablet
+2. **Clicks "New Claim"** → selects "Voice"
+3. **Records issue**: "Found misalignment in component batch 12345"
+4. **Hangs up phone** and Groq Whisper transcribes automatically
+5. **Adds photo** using camera to show defect
+6. **Selects category**: "Quality" (AI suggests it)
+7. **Submits claim**
+
+**System automatically:**
+- Classifies as "Quality" with "High" priority
+- Routes to Quality department
+- Creates notification for Quality Manager
+- Logs activity
+
+**Employee then:**
+- Sees claim on dashboard
+- Receives assignment notification when manager assigns it
+- Adds comments if manager asks for clarification
+- Marks resolved when issue fixed
+
+### Capabilities
+
+**Can do:**
+- Create claims (text, voice, image)
+- Assign claims to self or request assignment
+- Comment on claims assigned to them
+- Add emoji reactions to comments
+- Attach supporting documents
+- View claim details and activity history
+- View dashboard with personal metrics
+
+**Cannot do:**
+- Assign claims to others
+- Change claim priority (manager can do this)
+- Delete claims
+- Create business rules
+- Access admin settings
+- View other departments' claims
+
+### Tips for Employees
+
+- **Use voice claims** for quick capture on production floor
+- **Provide clear descriptions** for better AI classification
+- **Add photos** for visual issues (defects, damage, etc.)
+- **Use @mentions** when you need specific person's help
+- **Check notifications** for assignments and comments
+- **Resolve claims completely** before marking as closed
+
+---
+
+## MANAGER Workflow
+
+**Primary Role**: Team oversight, SLA compliance, escalation handling
+
+### Dashboard View
+Managers see:
+- Department claims (all statuses)
+- Team member workload
+- SLA compliance metrics
+- At-risk and overdue claims
+- Department analytics
+- Personal queue
+
+### Typical Workflow: Monitor Team SLA
+
+**Scenario**: Quality Manager starts day
+
+1. **Opens Dashboard**:
+   - Sees 23 open claims in Quality department
+   - SLA compliance: 92% (good)
+   - 3 claims showing "At-Risk" (yellow warning)
+   - 1 claim showing "Overdue" (red alert)
+
+2. **Reviews At-Risk Claims**:
+   - Clicks on first at-risk claim
+   - Sees it's been open 6 hours, due in 2 hours
+   - Assigned to John but status still "OPEN"
+   - **Adds comment**: "@John Can we move this to IN_PROGRESS?"
+   - John gets notification immediately
+
+3. **Handles Overdue Claim**:
+   - Opens the red-flagged claim
+   - Sees it's 4 hours overdue
+   - **Calls meeting** with team to resolve
+   - **Escalates** to Operations Director for priority handling
+   - Updates status as team works on resolution
+
+4. **Reviews Analytics**:
+   - Checks trend: Quality claims up 12% this week
+   - Filters by category to find pattern
+   - Sees issue concentrated in Line 3
+   - **Takes action**: Investigate Line 3 settings
+
+### Typical Workflow: Create Business Rule
+
+**Scenario**: Manager wants to automate claim routing
+
+1. **Goes to Administration** → **Business Rules**
+2. **Creates rule**:
+   - **Name**: "Auto-route Critical Safety Claims"
+   - **Trigger**: If category = "Safety" AND priority = "Critical"
+   - **Action**: Automatically assign to "Sarah (Safety Lead)"
+   - **Action**: Send email notification to Sarah AND her manager
+3. **Tests rule** with new claim
+4. **Activates rule** to apply to all future claims
+
+### Typical Workflow: Escalate to Executive
+
+**Scenario**: Pattern emerges causing SLA breaches
+
+1. **Analyzes reports** showing repeated delays in Maintenance
+2. **Documents pattern**:
+   - 40% of Maintenance claims now exceeding SLA
+   - Not enough staff or too complex issues?
+   - Need to either hire or simplify processes
+3. **Escalates to ADMIN** with evidence:
+   - **Creates claim** of type "System Issue"
+   - **Attaches PDF report** with trend analysis
+   - **@Mentions CFO** to request staffing approval
+4. **CFO reviews** and approves hiring
+5. **SLA compliance improves** once new people onboard
+
+### Capabilities
+
+**Can do:**
+- Create claims
+- Assign claims to team members
+- Escalate claims to higher priority/authority
+- Add comments to any team claim
+- View department analytics
+- Create and edit business rules
+- Configure department-specific settings
+- View team member workload
+- Approve/reject escalations
+- Generate department reports
+
+**Cannot do:**
+- Change another department's claims
+- Access admin console
+- Create new departments
+- Modify SLA policies
+- Create users
+- Configure organization-wide settings
+
+### Tips for Managers
+
+- **Monitor dashboard daily** to catch at-risk claims early
+- **Use Kanban board** for visual workload management
+- **Create rules** to automate common scenarios
+- **Review analytics** weekly for trends
+- **Escalate early** rather than missing SLAs
+- **Support team** with comments and guidance
+- **Document patterns** with reports for leadership
+
+---
+
+## ADMIN Workflow
+
+**Primary Role**: System configuration, user management, organization settings
+
+### Dashboard View
+Admins see:
+- Organization-wide metrics
+- All departments and all claims
+- System health and configuration status
+- User management queue
+- Admin console access
+
+### Typical Workflow: Onboard New Department
+
+**Scenario**: Company opens new manufacturing facility
+
+1. **Admin creates new department** in Settings:
+   - Name: "Facility-B Production"
+   - Department type: "PRODUCTION"
+   - Capacity: 45 people
+   - Manager: Assign to facility manager
+
+2. **Configures SLA rules** for new department:
+   - Same as Facility-A but allow extra time for location
+   - Critical: 6-hour response (vs 4-hour elsewhere)
+
+3. **Creates business rules** for routing:
+   - Claims marked "Facility-B" auto-route to Facility-B manager
+   - Critical claims also notify VP Operations
+
+4. **Adds new users** in Keycloak:
+   - 5 supervisors (MANAGER role)
+   - 40 floor workers (EMPLOYEE role)
+   - Assigns to Facility-B organization
+
+5. **Imports knowledge base** specific to facility:
+   - Standard procedures for this facility
+   - Local emergency contacts
+   - Equipment-specific documentation
+
+6. **Tests** with pilot group before full launch
+
+### Typical Workflow: Configure AI Assistant
+
+**Scenario**: Admin wants AI to help with Safety issues
+
+1. **Goes to Admin Console** → **AI Configuration**
+2. **Creates new AI Agent**:
+   - Name: "Safety Assistant"
+   - Description: "Helps with safety incident classification and procedures"
+   - System prompt: "You are a safety expert. Help users understand incident severity and provide safety procedure guidance"
+   - LLM Provider: "OpenRouter" (cost-effective)
+   - Available tools: Search claims, get claim details, access knowledge base
+
+3. **Uploads safety documentation** to knowledge base:
+   - OSHA regulations
+   - Company safety procedures
+   - Incident response playbooks
+   - First aid guidelines
+
+4. **Tests the assistant**:
+   - Query: "What's the procedure for chemical spill?"
+   - Assistant retrieves procedures from knowledge base
+   - Provides accurate, guided response
+
+5. **Deploys** for Safety team to use
+
+### Typical Workflow: Review Organization Health
+
+**Scenario**: Quarterly review of Intelligate usage
+
+1. **Exports organization report** (PDF)
+2. **Reviews metrics**:
+   - Total claims processed this quarter: 1,247
+   - Average resolution time: 14 hours
+   - SLA compliance: 94%
+   - Most common category: Quality (42%)
+   - Team with best performance: Production (96% SLA)
+   - Team needing support: Maintenance (78% SLA)
+
+3. **Takes action**:
+   - Meets with Maintenance manager to understand issues
+   - Implements additional training
+   - Adds business rule to auto-escalate Maintenance claims after 12 hours
+   - Plans audit of Maintenance processes
+
+4. **Next quarter**: Reviews improvement
+
+### Capabilities
+
+**Can do:**
+- Everything (full system access)
+- Create and manage users
+- Manage all organizations and departments
+- Create and edit SLA policies
+- Create business rules
+- Configure AI agents
+- Manage knowledge base
+- Change any claim
+- Delete claims (if needed)
+- Generate any report
+- Configure system-wide settings
+- Access all user data
+- View complete audit logs
+
+**Cannot do:**
+- (Nothing - full access)
+
+### Responsibilities
+
+**Should regularly:**
+- Monitor organization health
+- Review usage patterns
+- Support managers with escalations
+- Update SLA policies as needed
+- Maintain knowledge base
+- Configure new departments/teams
+- Manage AI agents
+- Review security and audit logs
+- Plan system improvements
+
+### Tips for Admins
+
+- **Plan ahead** before onboarding new departments
+- **Document all configurations** for consistency
+- **Review usage reports** monthly for insights
+- **Keep knowledge base current** so AI provides good help
+- **Test all rules** before deploying
+- **Monitor SLA compliance** across all departments
+- **Support team adoption** with training and best practices
+
+---
+
+## Role Synchronization
+
+### How Roles Work
+
+1. **Defined in Keycloak**: Roles (admin, manager, employee) are created and configured in Keycloak realm
+2. **Assigned to Users**: When creating/modifying users in Keycloak, admin assigns one or more roles
+3. **Synced on Login**: When user logs in, Keycloak passes roles in JWT token
+4. **Kong Validates**: Kong Gateway validates JWT and passes roles to backend
+5. **Intelligate Receives**: Backend reads roles from Kong headers and syncs to user record
+6. **Interface Adapts**: Intelligate shows role-appropriate interface
+
+### Changing Roles
+
+**Process when role changes:**
+
+1. **Admin edits user in Keycloak**:
+   - Remove "employee" role
+   - Add "manager" role
+2. **User logs out** or sessions expires
+3. **User logs back in**
+4. **New role** automatically reflected in Intelligate
+5. **Interface updates** to show manager capabilities
+6. **Changed immediately** - no Intelligate admin action needed
+
+---
+
+## Cross-Functional Collaboration
+
+Even with role restrictions, teams collaborate effectively:
+
+- **Employees create claims** that route to appropriate managers
+- **Managers can involve specialists** from other departments via comments
+- **Comments with @mentions** notify cross-department people
+- **Escalations elevate to ADMIN** for organization-wide issues
+- **Complete activity log** tracks all involvement
+
+### Example: Quality + Logistics Issue
+
+1. **Employee creates claim**: "Damaged product in shipment"
+2. **AI routes**: "Quality" (suggested category)
+3. **Quality Manager assigns**: To Quality specialist
+4. **Quality specialist comments**: "@Logistics Can you confirm shipping damage?"
+5. **Logistics Manager sees** the @mention notification
+6. **Logistics specialist joins** the conversation
+7. **Teams collaborate** to determine if Quality or Logistics issue
+8. **Resolution addresses both** departments' concerns
+
+---
+
+## Next Steps
+
+- [Quickstart](/platform/quickstart) - Complete setup guide
+- [First Week Guide](/platform/first-week-guide) - Onboarding roadmap
+- [Administration](/admin/initial-setup) - Full admin console guide
+- [Business Rules](/platform/business-rules-automation) - Automation workflows

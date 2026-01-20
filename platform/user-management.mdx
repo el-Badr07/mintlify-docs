@@ -1,0 +1,97 @@
+---
+title: "User Management"
+description: "Manage team members, roles, and permissions"
+---
+
+## Managing Users
+
+User management happens primarily in Keycloak. Intelligate reads user data from Keycloak and syncs it automatically.
+
+### Adding New Users
+
+**Via Keycloak Admin Console:**
+1. Go to `https://api.64.226.86.247.sslip.io/keycloak`
+2. Navigate to Users section
+3. Create new user with username, email
+4. Set temporary password (user changes on first login)
+5. Assign roles: admin, manager, employee
+6. User receives email and joins organization
+
+**Via Self-Signup:**
+1. Users visit signup page
+2. Select organization from list
+3. Create account with email/password
+4. Receive EMPLOYEE role by default
+5. Can be promoted by admin later
+
+### Assigning Roles
+
+Roles are assigned in Keycloak and synced to Intelligate:
+- **ADMIN**: Full system access
+- **MANAGER**: Department oversight
+- **EMPLOYEE**: Daily claim management
+
+**To change role:**
+1. Edit user in Keycloak
+2. Update role assignments
+3. Role takes effect on next login
+
+### Department Assignment
+
+In Intelligate admin console:
+1. Go to Organization Settings
+2. Select user
+3. Assign to department (Production, Quality, Maintenance, etc.)
+4. Department determines workload visibility
+
+### User Status
+
+Users can be:
+- **Active**: Can login and work
+- **Inactive**: Cannot login (admin can reactivate)
+- **Pending**: Invitation sent, awaiting response
+
+---
+
+## Permissions by Role
+
+### ADMIN
+- Create/edit all claims
+- Manage all users
+- Configure system
+- Access all data
+- Create business rules
+- Configure AI agents
+
+### MANAGER
+- Create claims
+- Manage team claims
+- View department data
+- Create department rules
+- Escalate claims
+- Monitor SLA
+
+### EMPLOYEE
+- Create claims
+- Collaborate on assigned claims
+- View personal dashboard
+- Cannot manage other users
+- Cannot access admin
+
+---
+
+## Deactivating Users
+
+When employee leaves:
+1. Go to Keycloak Admin Console
+2. Find user
+3. Mark as inactive or delete
+4. Cannot login anymore
+5. Previous claims remain in system for history
+
+---
+
+## Next Steps
+
+- [Organization Configuration](/platform/organization-configuration)
+- [Access Control](/platform/access-control)

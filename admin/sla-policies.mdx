@@ -1,0 +1,93 @@
+---
+title: "SLA Policies"
+description: "Configure response and resolution deadlines"
+---
+
+## SLA Overview
+
+Service Level Agreements (SLAs) define deadlines for handling claims.
+
+### SLA Components
+
+**Response Time**: How quickly must claim be acknowledged/assigned
+- Example: Critical = 4 hours
+- Example: Low = 48 hours
+
+**Resolution Time**: How quickly must claim be fully resolved
+- Example: Critical = 8 hours
+- Example: Low = 1 week
+
+### Default SLA Policy
+
+| Priority | Response | Resolution | Escalation |
+|----------|----------|-----------|-----------|
+| Critical | 4 hours | 8 hours | 2 hours if not assigned |
+| High | 8 hours | 24 hours | 4 hours if not assigned |
+| Medium | 24 hours | 72 hours | Escalate if at-risk |
+| Low | 48 hours | 1 week | Manual review |
+
+## Customizing SLAs
+
+1. Admin Console → **SLA Policies**
+2. Select priority level
+3. Set response time
+4. Set resolution time
+5. Configure escalation triggers
+6. Save and test
+
+### By Priority
+
+Set different rules for Critical/High/Medium/Low priorities.
+
+### By Category
+
+Override SLAs for specific categories:
+- Safety claims: May need faster response
+- Equipment maintenance: May need extra time for parts
+- Logistics: May have different timelines
+
+### By Department
+
+Different departments may have different capabilities:
+- Well-staffed department: Shorter SLAs possible
+- Under-resourced department: Longer SLAs needed
+
+## Exclusions
+
+Configure when SLA clock stops:
+- Weekends (if applicable)
+- Holidays
+- Business hours only
+- Maintenance windows
+
+Example: "Resolve by Monday 9 AM" when claim created Friday 5 PM.
+
+## Escalation Rules
+
+Automatic escalation when SLA at risk:
+- At 2 hours remaining: Yellow warning
+- At deadline: Red alert, notify manager
+- 1 hour overdue: Escalate to director
+
+## SLA Monitoring
+
+Dashboard shows:
+- SLA compliance rate
+- Claims at-risk or overdue
+- Department SLA performance
+- Category SLA comparison
+
+## Tips
+
+- **Start conservative**: Longer SLAs initially
+- **Monitor actual performance**: Adjust based on data
+- **Different for different categories**: Manufacturing vs logistics differ
+- **Account for complexity**: Complex issues may need more time
+- **Regular review**: Quarterly adjustment keeps SLAs realistic
+
+---
+
+## Next Steps
+
+- [Escalation Rules](/admin/escalation-rules)
+- [Automation Workflows](/admin/automation-workflows)

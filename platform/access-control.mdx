@@ -1,0 +1,63 @@
+---
+title: "Access Control"
+description: "Role-based permissions and data security"
+---
+
+## Role-Based Access Control (RBAC)
+
+Intelligate enforces access control based on user roles defined in Keycloak.
+
+### Permission Matrix
+
+| Action | Admin | Manager | Employee |
+|--------|-------|---------|----------|
+| Create Claim | ✅ | ✅ | ✅ |
+| View All Claims | ✅ | Dept only | Own only |
+| Assign Claim | ✅ | Dept only | No |
+| Change Priority | ✅ | Dept only | No |
+| Create Business Rule | ✅ | Dept only | No |
+| Access Admin Console | ✅ | No | No |
+| Manage Users | ✅ | No | No |
+| View Analytics | ✅ | Dept only | No |
+| Create AI Agent | ✅ | No | No |
+
+### Organization Isolation
+
+- Users only see claims from their organization
+- Cannot access other organizations' data
+- Department filtering applies within organization
+- Admin can see entire organization
+
+### Department-Level Access
+
+- Managers see only their department's claims
+- Employees see only assigned claims
+- Cannot view other departments' claims
+- Unless specifically collaborated on
+
+---
+
+## Data Security
+
+### Authentication
+- Keycloak SSO for centralized authentication
+- No passwords stored in Intelligate
+- JWT tokens validated by Kong Gateway
+
+### Authorization
+- Kong injects user headers
+- Backend verifies permissions
+- Role-based filtering on queries
+
+### Audit Logging
+- All user actions logged
+- Timestamps recorded
+- Cannot delete history
+- Available for compliance review
+
+---
+
+## Next Steps
+
+- [Data Security](/platform/data-security)
+- [SSO/Keycloak Setup](/platform/sso-keycloak-setup)
