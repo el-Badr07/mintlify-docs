@@ -5,7 +5,7 @@ description: "Get up and running with Reclamia in 15 minutes"
 
 ## Overview
 
-This guide walks you through complete setup from organization configuration to creating your first claim. Whether you're an administrator setting up a new organization or a team member joining an existing one, you'll be ready in minutes.
+This guide walks you through setting up your organization and creating your first claim in Reclamia. Whether you're an administrator setting up a new workspace or a team member joining an existing one, you'll be ready to start in minutes.
 
 <Tip>
 Estimated time: 15 minutes from signup to first claim
@@ -13,134 +13,50 @@ Estimated time: 15 minutes from signup to first claim
 
 ---
 
-## Part 1: Organization & User Setup (Admins)
+## Part 1: Organization Setup (Admins)
 
 ### Step 1: Create Your Organization
 
-1. **Access the Auth Service signup page**
+1. **Access the signup page**
 2. **Choose to create a new organization**:
-   - Organization name (e.g., "Acme Manufacturing")
-   - This creates an organization in Keycloak and Reclamia
-3. **Fill in your details**:
+   - Organization name (e.g., "Acme Operations")
+
+3. **Select you user role**:
+   - Choose **ADMIN** to manage the organization
+4. **Fill in your details**:
    - Username
    - Email address
    - Password (8+ characters)
    - Full name
-4. **Automatic login** occurs after signup
-5. You're now the **Organization Admin**
+5. **Automatic login** occurs after signup
+6. You're now the **Organization Admin**
 
-### Step 2: Configure Keycloak (Organization Admin)
-
-Keycloak is where roles and users are managed enterprise-wide.
-
-1. **Access Keycloak Admin Console**:
-   - URL: `https://api.64.226.86.247.sslip.io/keycloak`
-   - Login with your admin credentials
-2. **Review available roles** (already configured):
-   - `admin` → Full system access
-   - `manager` → Team and department oversight
-   - `employee` → Claim creation and collaboration
-3. **Create additional custom roles** if needed for your organization
-4. **Note**: User authentication is managed in Keycloak, not in Reclamia
-
-### Step 3: Add Team Members (Organization Admin)
-
-**Method 1: Via Keycloak Admin Console**
-
-1. **In Keycloak Console**, select your realm
-2. **Navigate to Users** section
-3. **Create new user**:
-   - Username
-   - Email
-   - First name, Last name
-   - Mark "Email Verified" if desired
-4. **Set temporary password** (user must change on first login)
-5. **Assign roles** (ADMIN, MANAGER, EMPLOYEE):
-   - Go to Role Mappings tab
-   - Add roles from "Realm Roles" section
-6. User receives **email invitation** and **sets permanent password**
-
-**Method 2: Users Join via Self-Signup**
-
-1. Users visit the **signup page**
-2. Select your organization from the list
-3. Create account with username, email, password
-4. Join with **EMPLOYEE** role by default
-5. Admin can **promote roles** in Keycloak later
-
-### Step 4: Configure Organization in Reclamia
-
-1. **Login to Reclamia** with your admin credentials
-2. **Go to Settings** → **Organization**
-3. **Set up departments** (if not already configured):
-   - PRODUCTION
-   - QUALITY_CONTROL
-   - MAINTENANCE
-   - LOGISTICS
-   - SAFETY
-   - HR (or custom)
-4. **Create custom categories** for your claim types
-5. **Set default SLA policies**:
-   - Critical: 4-hour response, 8-hour resolution
-   - High: 8-hour response, 24-hour resolution
-   - Medium: 24-hour response, 72-hour resolution
-   - Low: 48-hour response, 1-week resolution
-6. **Enable features** your organization needs
 
 ---
 
 ## Part 2: User Roles & Permissions
 
-### Role Breakdown
+Reclamia includes three predefined roles that cover most use cases:
 
-#### ADMIN Role
-Full system access. Typically for IT and operations leadership.
-
-**Can:**
-- Manage all users and their roles
-- Configure organization settings
-- Create/edit categories and departments
+**ADMIN** - Full system access for IT and operations leadership
+- Manage users and roles
+- Configure organization settings and automation
+- Create/edit departments and categories
 - Set SLA policies and business rules
-- View all claims regardless of department
 - Create and configure AI agents
-- Manage knowledge base
-- Export all organization data
+- View all claims and analytics
 
-**View:** All departments, all claims, all analytics
-
-#### MANAGER Role
-Team oversight and SLA compliance monitoring.
-
-**Can:**
-- View team members and their workload
-- Monitor SLA compliance for their department
+**MANAGER** - Team oversight and SLA compliance monitoring
+- Monitor team workload and SLA compliance
 - Escalate claims when needed
-- Create business rules for their department
-- Add to claim comments and collaborate
 - View analytics for their department
+- Collaborate on claims with comments
 
-**View:** Their department's claims and team metrics
-
-#### EMPLOYEE Role
-Day-to-day claim creation and collaboration.
-
-**Can:**
+**EMPLOYEE** - Day-to-day claim creation and collaboration
 - Create new claims (text, voice, or image)
-- View assigned claims
-- Add comments and collaborate
+- View assigned claims and collaborate
 - Attach files and evidence
-- View their own dashboard
-
-**View:** Own claims, team claims they're involved with
-
-### Dynamic Role Management
-
-**Important**: Roles are managed in Keycloak, not in Reclamia:
-
-1. Users are **created with roles in Keycloak**
-2. Roles are **automatically synced** when user first accesses Reclamia
-3. If you **change a role in Keycloak**, the change is reflected **immediately** in Reclamia
-4. Users see an **interface matching their role**
+- Manage their own claims
 
 ---
 
@@ -206,74 +122,6 @@ Day-to-day claim creation and collaboration.
 
 ---
 
-## Part 4: First Week Roadmap
-
-### Day 1: Setup & First Claim
-- ✅ Organization created (admin)
-- ✅ Keycloak configured with roles
-- ✅ Team invited
-- ✅ First claim created and assigned
-
-### Day 2-3: Explore Features
-- **Create claims** using all input methods (text, voice, image)
-- **View dashboard** and understand metrics
-- **Try Kanban board** for status management
-- **Practice collaboration** with comments and assignments
-- **Review SLA status** on claims
-
-### Day 4: Team Collaboration
-- **Have team create claims**
-- **Practice assigning** between team members
-- **Use escalation** when needed
-- **Comment and collaborate** on claims
-- **Test notifications** to verify setup
-
-### Day 5: Analytics & Optimization
-- **Review dashboard** for patterns
-- **Check SLA compliance**
-- **Identify process improvements**
-- **Create business rules** for automation
-- **Set up custom categories** if needed
-
----
-
-## Part 5: Advanced Setup (After Basics)
-
-### Configure Business Rules
-
-Once familiar with basics:
-
-1. **Go to Administration** → **Business Rules**
-2. **Create auto-routing rule**:
-   - Example: "If category = 'Safety', auto-route to Safety department"
-3. **Create escalation rule**:
-   - Example: "If priority = 'Critical' and not assigned in 2 hours, escalate to manager"
-4. **Test rules** with new claims
-
-### Set Up AI Agents
-
-1. **Go to AI Layer** → **Agent Configuration**
-2. **Create agent** for your department:
-   - Name: "Quality Assistant"
-   - System prompt: "Help quality team classify and resolve defects"
-   - Available tools: Search claims, get claim details, get analytics
-3. **Link knowledge base** with procedures
-4. **Test** with sample queries
-
-### Import Knowledge Base
-
-1. **Gather documentation**:
-   - Standard operating procedures
-   - Troubleshooting guides
-   - Historical solutions
-   - Best practices
-2. **Go to Admin** → **Knowledge Base**
-3. **Upload documents** in bulk
-4. **Organize by department**
-5. **AI agents** now reference this knowledge
-
----
-
 ## Common Scenarios
 
 ### I'm a New Employee
@@ -295,10 +143,11 @@ Once familiar with basics:
 ### I'm an Admin Setting Up New Org
 
 1. **Complete Part 1** above (Organization & User Setup)
-2. **Complete Part 4** advanced setup (Business Rules, AI Agents)
-3. **Import knowledge base** with company documentation
-4. **Train team** on Reclamia
-5. **Monitor adoption** for first week
+2. **Set up departments and categories** in Organization Settings
+3. **Configure SLA policies** for your organization
+4. **Create business rules** for automation
+5. **Train team** on Reclamia
+6. **Monitor adoption** in first week
 
 ---
 
@@ -306,35 +155,30 @@ Once familiar with basics:
 
 ### Can't Login?
 
-- **Check Keycloak status**: Ensure Keycloak is running at `https://api.64.226.86.247.sslip.io/keycloak`
 - **Verify credentials**: Double-check username and password
 - **Check email**: Verify you received the signup confirmation
 - **Password reset**: Use "Forgot Password" link
 
 ### Role Not Showing?
 
-- **Verify in Keycloak**: Check that role is assigned in Keycloak Admin Console
 - **Try logging out**: Logout and login again to refresh roles
 - **Clear cache**: Browser cache might show old role information
 
 ### Can't Assign User?
 
-- **Verify department**: Both users must be in same organization
+- **Verify both users**: Both users must exist in your organization
 - **Check role**: Users need MANAGER+ role to assign claims
-- **Verify user added**: Confirm the user actually exists in system
 
 ### Voice Transcription Issues?
 
 - **Check audio quality**: Ensure quiet environment
 - **Use clear speech**: Speak clearly without background noise
-- **Try again**: Groq might need retry for processing
 
 ---
 
 ## Next Steps
 
+- **Set up organization**: Read [Organization Setup](/platform/organization-setup)
 - **Learn workflows**: Read [Core Workflows](/platform/claim-lifecycle)
 - **Master analytics**: Check [Dashboard Overview](/platform/dashboard-overview)
-- **Configure automation**: Explore [Business Rules](/platform/business-rules-automation)
 - **Leverage AI**: Start with [AI Agents](/ai/ai-agents-overview)
-- **Full admin setup**: Review [Admin Console](/admin/initial-setup)

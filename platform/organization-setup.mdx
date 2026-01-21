@@ -1,0 +1,240 @@
+---
+title: "Organization Setup"
+description: "Configure departments, categories, and SLA policies"
+---
+
+## Departments
+
+Departments organize your teams and define how claims are routed throughout your organization.
+
+### Standard Departments
+
+Reclamia includes default departments ready to use:
+- **PRODUCTION**: Production floor and operations
+- **QUALITY_CONTROL**: Quality assurance team
+- **MAINTENANCE**: Equipment and facility maintenance
+- **LOGISTICS**: Shipping and supply chain
+- **SAFETY**: Safety and compliance
+- **HR**: Human resources (or custom)
+
+### Adding Custom Departments
+
+1. **Login to Reclamia** as admin
+2. **Go to Settings** → **Organization** → **Departments**
+3. **Click "Add Department"**
+4. **Enter details**:
+   - Department name
+   - Assign department manager
+   - Enable/disable in system
+5. **Save** - department ready for use
+
+### Department Configuration
+
+**Manager Assignment:**
+- Assign one or more managers to oversee the department
+- Managers see all claims in their department
+- Department metrics appear on their dashboard
+
+**Team Members:**
+- Assign employees to specific departments
+- Employees see only their department's work
+- Managers see all team members' workload
+
+**Department Analytics:**
+- Track claims per department
+- Monitor resolution time and SLA compliance
+- View workload distribution
+- Identify trends and bottlenecks
+
+---
+
+## Categories
+
+Categories organize claims by type and help route them effectively.
+
+### Default Categories
+
+- **Quality**: Quality issues and defects
+- **Safety**: Incidents and hazards
+- **Logistics**: Shipping and supply chain issues
+- **Maintenance**: Equipment problems and repairs
+- **Other**: Miscellaneous issues
+
+### Creating Custom Categories
+
+1. **Go to Settings** → **Organization** → **Categories**
+2. **Click "Add Category"**
+3. **Enter details**:
+   - Category name (e.g., "Environmental")
+   - Description
+   - Assign to departments
+   - Configure category-specific SLA
+4. **Save** - category ready for use
+
+### Best Practices
+
+- **5-10 categories maximum**: Too many confuses users
+- **Clear naming**: Use your operational terminology
+- **Minimize "Other"**: Every claim should fit a clear category
+- **Department alignment**: Categories match your departments
+- **Regular review**: Adjust based on claim patterns
+
+### Category Mapping
+
+Map categories to departments for automatic routing:
+
+| Category | Route To | Why |
+|----------|----------|------|
+| Quality | Quality department | Specialization |
+| Safety | Safety + Notify Manager | Critical priority |
+| Maintenance | Maintenance team | Equipment specialists |
+| Logistics | Logistics team | Supply chain experts |
+
+---
+
+## SLA Policies
+
+Service Level Agreements define deadlines for handling claims based on priority and category.
+
+### SLA Components
+
+**Response Time**: How quickly a claim must be acknowledged or assigned
+- Example: Critical = 4 hours
+- Example: Low = 48 hours
+
+**Resolution Time**: How quickly a claim must be fully resolved
+- Example: Critical = 8 hours
+- Example: Low = 1 week
+
+### Default SLA Policy
+
+| Priority | Response | Resolution | Escalation |
+|----------|----------|-----------|-----------|
+| Critical | 4 hours | 8 hours | 2 hours if not assigned |
+| High | 8 hours | 24 hours | 4 hours if not assigned |
+| Medium | 24 hours | 72 hours | Escalate if at-risk |
+| Low | 48 hours | 1 week | Manual review |
+
+### Customizing SLAs
+
+1. **Go to Settings** → **Organization** → **SLA Policies**
+2. **Select priority level**
+3. **Set response and resolution times**
+4. **Configure escalation triggers**
+5. **Save** - SLA active
+
+### Override by Category
+
+Different categories may need different SLAs:
+- **Safety claims**: May need faster response (4-hour response)
+- **Maintenance claims**: May need extra time for parts (48-hour resolution)
+- **Logistics claims**: May have different timelines (6-hour response)
+
+### Exclusions
+
+Configure when the SLA clock pauses:
+- Weekends and holidays
+- Business hours only
+- Maintenance windows
+
+Example: "Resolve by Monday 9 AM" when created Friday 5 PM.
+
+### SLA Monitoring
+
+Your dashboard shows:
+- Overall SLA compliance rate
+- Claims at-risk or overdue
+- Department SLA performance
+- Category SLA comparison
+
+### Tips
+
+- **Start conservative**: Longer SLAs initially, then tighten
+- **Monitor performance**: Adjust based on actual data
+- **Category-specific rules**: Different categories need different timelines
+- **Account for complexity**: Complex issues need more time
+- **Quarterly review**: Keep SLAs realistic
+
+---
+
+## Escalation Rules
+
+Escalation rules automatically promote claims up the chain when needed.
+
+### When to Escalate
+
+- Claim approaching SLA deadline
+- No one assigned after X hours
+- Critical priority not addressed
+- Safety concern requires executive attention
+- Cross-department issue needs coordination
+
+### Creating Escalation Rules
+
+1. **Go to Settings** → **Organization** → **Escalation Rules**
+2. **Click "Add Rule"**
+3. **Set trigger conditions**:
+   - Priority = Critical
+   - Category = Safety
+   - Open > 2 hours without assignment
+4. **Set escalation action**:
+   - Escalate to department manager
+   - Escalate to director
+   - Notify department head
+5. **Save and test** with sample claim
+
+### Common Escalation Scenarios
+
+**Unassigned Critical Claims:**
+- Trigger: Critical priority + no assignment after 1 hour
+- Action: Escalate to department manager
+- Effect: Ensures critical claims get attention fast
+
+**SLA At-Risk Claims:**
+- Trigger: SLA status = At-Risk (2 hours before deadline)
+- Action: Notify assignee + add to manager dashboard
+- Effect: Proactive intervention before deadline
+
+**Safety Claims:**
+- Trigger: Category = Safety AND Priority = High
+- Action: Auto-escalate to Safety Manager + email officers
+- Effect: Safety gets priority treatment
+
+**Cross-Department Issues:**
+- Trigger: Mentions multiple departments
+- Action: Escalate to Operations Director
+- Effect: Executive alignment
+
+### Escalation Chain Example
+
+```
+Level 1: Assigned person works on it
+    ↓ (if not assigned in 2 hours)
+Level 2: Department manager notified
+    ↓ (if still not resolved in 4 hours)
+Level 3: Operations director takes over
+    ↓ (if still open next day)
+Level 4: Executive review for process change
+```
+
+### Monitoring Escalations
+
+Your dashboard shows:
+- Escalations per week
+- Which rules trigger most
+- Escalation success rate
+- Patterns in escalations
+
+High escalation rates suggest:
+- Insufficient resources
+- Process issues
+- Unclear procedures
+- Training needs
+
+---
+
+## Next Steps
+
+- [Core Workflows](/platform/claim-lifecycle) - Master advanced claim workflows
+- [Business Rules](/platform/business-rules-automation) - Automate common scenarios
+- [Dashboard Overview](/platform/dashboard-overview) - Monitor performance

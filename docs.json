@@ -26,14 +26,14 @@
             "group": "Getting Started",
             "pages": [
               "platform/quickstart",
-              "platform/user-roles-workflows",
-              "platform/first-week-guide"
+              "platform/user-roles-workflows"
             ]
           },
           {
             "group": "Core Workflows",
             "pages": [
-              "platform/claim-lifecycle"
+              "platform/claim-lifecycle",
+              "platform/organization-setup"
             ]
           },
           {
@@ -74,26 +74,6 @@
               "ai/agent-use-cases",
               "ai/rag-knowledge-base",
               "ai/chat-assistant"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Admin Console",
-        "groups": [
-          {
-            "group": "Setup & Configuration",
-            "pages": [
-              "admin/initial-setup",
-              "admin/department-management",
-              "admin/category-customization"
-            ]
-          },
-          {
-            "group": "Policies & Rules",
-            "pages": [
-              "admin/sla-policies",
-              "admin/escalation-rules"
             ]
           }
         ]
