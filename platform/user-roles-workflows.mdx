@@ -59,7 +59,6 @@ Employees see:
 - Create claims (text, voice, image)
 - Assign claims to self or request assignment
 - Comment on claims assigned to them
-- Add emoji reactions to comments
 - Attach supporting documents
 - View claim details and activity history
 - View dashboard with personal metrics
@@ -68,7 +67,6 @@ Employees see:
 - Assign claims to others
 - Change claim priority (manager can do this)
 - Delete claims
-- Create business rules
 - Access admin settings
 - View other departments' claims
 
@@ -94,7 +92,6 @@ Managers see:
 - SLA compliance metrics
 - At-risk and overdue claims
 - Department analytics
-- Personal queue
 
 ### Typical Workflow: Monitor Team SLA
 
@@ -161,7 +158,6 @@ Managers see:
 - Create claims
 - Assign claims to team members
 - Escalate claims to higher priority/authority
-- Add comments to any team claim
 - View department analytics
 - Create and edit business rules
 - Configure department-specific settings
@@ -174,7 +170,6 @@ Managers see:
 - Access admin console
 - Create new departments
 - Modify SLA policies
-- Create users
 - Configure organization-wide settings
 
 ### Tips for Managers
@@ -184,7 +179,6 @@ Managers see:
 - **Create rules** to automate common scenarios
 - **Review analytics** weekly for trends
 - **Escalate early** rather than missing SLAs
-- **Support team** with comments and guidance
 - **Document patterns** with reports for leadership
 
 ---
@@ -228,8 +222,6 @@ Admins see:
    - Standard procedures for this facility
    - Local emergency contacts
    - Equipment-specific documentation
-
-6. **Tests** with pilot group before full launch
 
 ### Typical Workflow: Configure AI Assistant
 
@@ -294,9 +286,6 @@ Admins see:
 - Access all user data
 - View complete audit logs
 
-**Cannot do:**
-- (Nothing - full access)
-
 ### Responsibilities
 
 **Should regularly:**
@@ -309,43 +298,6 @@ Admins see:
 - Manage AI agents
 - Review security and audit logs
 - Plan system improvements
-
-### Tips for Admins
-
-- **Plan ahead** before onboarding new departments
-- **Document all configurations** for consistency
-- **Review usage reports** monthly for insights
-- **Keep knowledge base current** so AI provides good help
-- **Test all rules** before deploying
-- **Monitor SLA compliance** across all departments
-- **Support team adoption** with training and best practices
-
----
-
-## Role Synchronization
-
-### How Roles Work
-
-1. **Defined in Keycloak**: Roles (admin, manager, employee) are created and configured in Keycloak realm
-2. **Assigned to Users**: When creating/modifying users in Keycloak, admin assigns one or more roles
-3. **Synced on Login**: When user logs in, Keycloak passes roles in JWT token
-4. **Kong Validates**: Kong Gateway validates JWT and passes roles to backend
-5. **Reclamia Receives**: Backend reads roles from Kong headers and syncs to user record
-6. **Interface Adapts**: Reclamia shows role-appropriate interface
-
-### Changing Roles
-
-**Process when role changes:**
-
-1. **Admin edits user in Keycloak**:
-   - Remove "employee" role
-   - Add "manager" role
-2. **User logs out** or sessions expires
-3. **User logs back in**
-4. **New role** automatically reflected in Reclamia
-5. **Interface updates** to show manager capabilities
-6. **Changed immediately** - no Reclamia admin action needed
-
 ---
 
 ## Cross-Functional Collaboration
